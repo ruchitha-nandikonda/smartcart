@@ -1,0 +1,152 @@
+{
+  "storeId": "target",
+  "storeName": "Target",
+  "date": "20251105",
+  "sourceUrl": "https://www.target.com/circular",
+  "deals": [
+    {
+      "productId": "organic-chicken",
+      "productName": "Organic Chicken Breast",
+      "sizeText": "1 lb",
+      "unitPrice": 8.99,
+      "promoPrice": 6.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "avocado",
+      "productName": "Avocado",
+      "sizeText": "each",
+      "unitPrice": 1.99,
+      "promoPrice": 1.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "yogurt",
+      "productName": "Greek Yogurt",
+      "sizeText": "32 oz",
+      "unitPrice": 5.99,
+      "promoPrice": 4.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "oatmeal",
+      "productName": "Oatmeal",
+      "sizeText": "18 oz",
+      "unitPrice": 4.49,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "almond-milk",
+      "productName": "Almond Milk",
+      "sizeText": "64 oz",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cereal",
+      "productName": "Cereal",
+      "sizeText": "14 oz",
+      "unitPrice": 5.49,
+      "promoPrice": 4.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "hummus",
+      "productName": "Hummus",
+      "sizeText": "10 oz",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "spinach",
+      "productName": "Spinach",
+      "sizeText": "10 oz bag",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "strawberries",
+      "productName": "Strawberries",
+      "sizeText": "1 lb",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "blueberries",
+      "productName": "Blueberries",
+      "sizeText": "6 oz",
+      "unitPrice": 4.49,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "bananas",
+      "productName": "Bananas",
+      "sizeText": "1 lb",
+      "unitPrice": 0.79,
+      "promoPrice": 0.59,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "oranges",
+      "productName": "Oranges",
+      "sizeText": "3 lb bag",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "granola",
+      "productName": "Granola",
+      "sizeText": "12 oz",
+      "unitPrice": 5.99,
+      "promoPrice": 4.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "coconut-oil",
+      "productName": "Coconut Oil",
+      "sizeText": "14 oz",
+      "unitPrice": 8.99,
+      "promoPrice": 6.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "quinoa",
+      "productName": "Quinoa",
+      "sizeText": "12 oz",
+      "unitPrice": 6.99,
+      "promoPrice": 5.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "chicken-breast",
+      "productName": "Chicken Breast",
+      "sizeText": "1 lb",
+      "unitPrice": 6.99,
+      "promoPrice": 5.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "eggs",
+      "productName": "Eggs",
+      "sizeText": "1 dozen",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "milk",
+      "productName": "Milk",
+      "sizeText": "1 gallon",
+      "unitPrice": 4.49,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "products": [
+    {
+      "id": "milk",
+      "name": "Milk",
+      "sizeGrams": 3785,
+      "categories": ["dairy"],
+      "synonyms": ["whole milk", "2% milk", "1% milk", "skim milk", "fat-free milk", "lactose-free milk", "almond milk", "soy milk", "oat milk", "coconut milk"],
+      "brandSynonyms": ["Horizon", "Organic Valley", "Great Value", "Store Brand"]
+    },
+    {
+      "id": "eggs",
+      "name": "Eggs",
+      "sizeGrams": 680,
+      "categories": ["dairy"],
+      "synonyms": ["large eggs", "extra large eggs", "jumbo eggs", "brown eggs", "white eggs", "free range eggs", "organic eggs"],
+      "brandSynonyms": ["Eggland's Best", "Vital Farms", "Pete and Gerry's"]
+    },
+    {
+      "id": "butter",
+      "name": "Butter",
+      "sizeGrams": 454,
+      "categories": ["dairy"],
+      "synonyms": ["salted butter", "unsalted butter", "margarine", "ghee", "vegan butter"],
+      "brandSynonyms": ["Land O'Lakes", "Kerrygold", "Tillamook"]
+    },
+    {
+      "id": "chicken",
+      "name": "Chicken Breast",
+      "sizeGrams": 680,
+      "categories": ["meat", "poultry"],
+      "synonyms": ["chicken", "chicken breast", "chicken thighs", "chicken wings", "chicken drumsticks", "ground chicken"],
+      "brandSynonyms": ["Tyson", "Perdue", "Foster Farms"]
+    },
+    {
+      "id": "beef",
+      "name": "Ground Beef",
+      "sizeGrams": 454,
+      "categories": ["meat"],
+      "synonyms": ["beef", "ground beef", "beef steak", "beef roast", "beef ribs"],
+      "brandSynonyms": ["80/20", "93/7", "grass fed"]
+    },
+    {
+      "id": "bread",
+      "name": "Bread",
+      "sizeGrams": 680,
+      "categories": ["bakery", "grains"],
+      "synonyms": ["white bread", "wheat bread", "whole wheat bread", "sourdough bread", "rye bread", "baguette", "dinner rolls"],
+      "brandSynonyms": ["Wonder", "Nature's Own", "Dave's Killer Bread"]
+    },
+    {
+      "id": "rice",
+      "name": "Rice",
+      "sizeGrams": 2000,
+      "categories": ["grains", "pantry"],
+      "synonyms": ["white rice", "brown rice", "jasmine rice", "basmati rice"],
+      "brandSynonyms": ["Uncle Ben's", "Minute Rice", "Carolina"]
+    },
+    {
+      "id": "pasta",
+      "name": "Pasta",
+      "sizeGrams": 500,
+      "categories": ["grains", "pantry"],
+      "synonyms": ["spaghetti", "penne", "fettuccine", "linguine", "macaroni"],
+      "brandSynonyms": ["Barilla", "Ronzoni", "De Cecco"]
+    },
+    {
+      "id": "tomatoes",
+      "name": "Tomatoes",
+      "sizeGrams": 500,
+      "categories": ["produce", "vegetables"],
+      "synonyms": ["tomato", "cherry tomatoes", "roma tomatoes", "beefsteak tomatoes"],
+      "brandSynonyms": []
+    },
+    {
+      "id": "onions",
+      "name": "Onions",
+      "sizeGrams": 500,
+      "categories": ["produce", "vegetables"],
+      "synonyms": ["onion", "yellow onions", "red onions", "white onions", "sweet onions"],
+      "brandSynonyms": []
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,176 @@
+{
+  "storeId": "kroger",
+  "storeName": "Kroger",
+  "date": "20251105",
+  "sourceUrl": "https://www.kroger.com/weeklyad",
+  "deals": [
+    {
+      "productId": "ground-turkey",
+      "productName": "Ground Turkey",
+      "sizeText": "1 lb",
+      "unitPrice": 5.99,
+      "promoPrice": 4.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "chicken-thighs",
+      "productName": "Chicken Thighs",
+      "sizeText": "1 lb",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "bacon",
+      "productName": "Bacon",
+      "sizeText": "12 oz",
+      "unitPrice": 6.99,
+      "promoPrice": 4.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "sausage",
+      "productName": "Italian Sausage",
+      "sizeText": "1 lb",
+      "unitPrice": 5.99,
+      "promoPrice": 4.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "fresh-mozzarella",
+      "productName": "Fresh Mozzarella",
+      "sizeText": "8 oz",
+      "unitPrice": 5.99,
+      "promoPrice": 4.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "sour-cream",
+      "productName": "Sour Cream",
+      "sizeText": "16 oz",
+      "unitPrice": 2.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cream-cheese",
+      "productName": "Cream Cheese",
+      "sizeText": "8 oz",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "broccoli",
+      "productName": "Broccoli",
+      "sizeText": "1 lb",
+      "unitPrice": 2.99,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "zucchini",
+      "productName": "Zucchini",
+      "sizeText": "1 lb",
+      "unitPrice": 2.49,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "mushrooms",
+      "productName": "Mushrooms",
+      "sizeText": "8 oz",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "asparagus",
+      "productName": "Asparagus",
+      "sizeText": "1 lb",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "green-beans",
+      "productName": "Green Beans",
+      "sizeText": "1 lb",
+      "unitPrice": 2.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "corn",
+      "productName": "Corn",
+      "sizeText": "4 ears",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cucumber",
+      "productName": "Cucumber",
+      "sizeText": "each",
+      "unitPrice": 1.49,
+      "promoPrice": 0.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "celery",
+      "productName": "Celery",
+      "sizeText": "1 bunch",
+      "unitPrice": 2.49,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "garlic",
+      "productName": "Garlic",
+      "sizeText": "3 bulbs",
+      "unitPrice": 2.99,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "potatoes",
+      "productName": "Potatoes",
+      "sizeText": "5 lb bag",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "onions",
+      "productName": "Onions",
+      "sizeText": "3 lb bag",
+      "unitPrice": 2.99,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "bread",
+      "productName": "Bread",
+      "sizeText": "1 loaf",
+      "unitPrice": 2.99,
+      "promoPrice": 2.29,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "hot-dogs",
+      "productName": "Hot Dogs",
+      "sizeText": "1 lb",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "hamburger-buns",
+      "productName": "Hamburger Buns",
+      "sizeText": "8 count",
+      "unitPrice": 3.49,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    }
+  ]
+}

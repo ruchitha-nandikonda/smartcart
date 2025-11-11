@@ -1,0 +1,4 @@
+com/smartcart/receipts/service/ReceiptMapperServiceTest.class
+com/smartcart/common/filter/RateLimitingFilterTest.class
+com/smartcart/pantry/PantryControllerTest.class
+com/smartcart/receipts/service/StringSimilarityTest.class

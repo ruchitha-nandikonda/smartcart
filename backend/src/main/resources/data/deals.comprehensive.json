@@ -1,0 +1,257 @@
+{
+  "storeId": "walmart",
+  "storeName": "Walmart",
+  "date": "20251110",
+  "sourceUrl": "https://www.walmart.com/weekly-ads",
+  "deals": [
+    {
+      "productId": "chicken-breast",
+      "productName": "Chicken Breast",
+      "sizeText": "1 lb",
+      "unitPrice": 6.99,
+      "promoPrice": 5.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "ground-beef",
+      "productName": "Ground Beef",
+      "sizeText": "1 lb",
+      "unitPrice": 5.99,
+      "promoPrice": 4.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "pork",
+      "productName": "Pork",
+      "sizeText": "1 lb",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "pork-cutlets",
+      "productName": "Pork Cutlets",
+      "sizeText": "1 lb",
+      "unitPrice": 5.99,
+      "promoPrice": 4.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "salmon",
+      "productName": "Salmon",
+      "sizeText": "1 lb",
+      "unitPrice": 9.99,
+      "promoPrice": 8.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "eggs",
+      "productName": "Eggs",
+      "sizeText": "1 dozen",
+      "unitPrice": 3.49,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "milk",
+      "productName": "Milk",
+      "sizeText": "1 gallon",
+      "unitPrice": 3.99,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "rice",
+      "productName": "Rice",
+      "sizeText": "5 lb",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "bread",
+      "productName": "Bread",
+      "sizeText": "1 loaf",
+      "unitPrice": 2.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "baguette",
+      "productName": "Baguette",
+      "sizeText": "1 loaf",
+      "unitPrice": 2.99,
+      "promoPrice": 2.29,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "mayonnaise",
+      "productName": "Mayonnaise",
+      "sizeText": "30 oz",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "panko",
+      "productName": "Panko",
+      "sizeText": "8 oz",
+      "unitPrice": 3.49,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "pickled-vegetables",
+      "productName": "Pickled Vegetables",
+      "sizeText": "16 oz",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cabbage",
+      "productName": "Cabbage",
+      "sizeText": "1 head",
+      "unitPrice": 1.99,
+      "promoPrice": 1.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cilantro",
+      "productName": "Cilantro",
+      "sizeText": "1 bunch",
+      "unitPrice": 1.99,
+      "promoPrice": 0.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "onions",
+      "productName": "Onions",
+      "sizeText": "3 lb bag",
+      "unitPrice": 2.99,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "garlic",
+      "productName": "Garlic",
+      "sizeText": "3 bulbs",
+      "unitPrice": 1.99,
+      "promoPrice": 0.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "tomatoes",
+      "productName": "Tomatoes",
+      "sizeText": "1 lb",
+      "unitPrice": 2.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "lettuce",
+      "productName": "Lettuce",
+      "sizeText": "1 head",
+      "unitPrice": 1.99,
+      "promoPrice": 1.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "bell-peppers",
+      "productName": "Bell Peppers",
+      "sizeText": "1 lb",
+      "unitPrice": 2.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "carrots",
+      "productName": "Carrots",
+      "sizeText": "1 lb bag",
+      "unitPrice": 1.99,
+      "promoPrice": 1.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "potatoes",
+      "productName": "Potatoes",
+      "sizeText": "5 lb bag",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "flour",
+      "productName": "Flour",
+      "sizeText": "5 lb",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "pasta",
+      "productName": "Pasta",
+      "sizeText": "1 lb",
+      "unitPrice": 1.99,
+      "promoPrice": 1.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cheese",
+      "productName": "Cheese",
+      "sizeText": "8 oz",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "butter",
+      "productName": "Butter",
+      "sizeText": "1 lb",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "tortillas",
+      "productName": "Tortillas",
+      "sizeText": "10 count",
+      "unitPrice": 2.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "salsa",
+      "productName": "Salsa",
+      "sizeText": "16 oz",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "sour-cream",
+      "productName": "Sour Cream",
+      "sizeText": "16 oz",
+      "unitPrice": 2.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "hot-dogs",
+      "productName": "Hot Dogs",
+      "sizeText": "1 lb",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cornmeal",
+      "productName": "Cornmeal",
+      "sizeText": "24 oz",
+      "unitPrice": 2.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    }
+  ]
+}
+

@@ -1,0 +1,281 @@
+{
+  "storeId": "safeway",
+  "storeName": "Safeway",
+  "date": "20251105",
+  "sourceUrl": "https://www.safeway.com/weekly-specials",
+  "deals": [
+    {
+      "productId": "rotisserie-chicken",
+      "productName": "Rotisserie Chicken",
+      "sizeText": "whole",
+      "unitPrice": 7.99,
+      "promoPrice": 5.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "ribeye-steak",
+      "productName": "Ribeye Steak",
+      "sizeText": "1 lb",
+      "unitPrice": 14.99,
+      "promoPrice": 9.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "pork-chops",
+      "productName": "Pork Chops",
+      "sizeText": "1 lb",
+      "unitPrice": 6.99,
+      "promoPrice": 4.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "chicken-drumsticks",
+      "productName": "Chicken Drumsticks",
+      "sizeText": "1 lb",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "ground-pork",
+      "productName": "Ground Pork",
+      "sizeText": "1 lb",
+      "unitPrice": 4.99,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cheddar-cheese",
+      "productName": "Cheddar Cheese",
+      "sizeText": "8 oz",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "mozzarella",
+      "productName": "Mozzarella Cheese",
+      "sizeText": "16 oz",
+      "unitPrice": 5.99,
+      "promoPrice": 4.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "butter-safeway",
+      "productName": "Butter",
+      "sizeText": "1 lb",
+      "unitPrice": 5.99,
+      "promoPrice": 4.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "yogurt-safeway",
+      "productName": "Yogurt",
+      "sizeText": "32 oz",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cottage-cheese",
+      "productName": "Cottage Cheese",
+      "sizeText": "16 oz",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "romaine-lettuce",
+      "productName": "Romaine Lettuce",
+      "sizeText": "1 head",
+      "unitPrice": 2.99,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "iceberg-lettuce",
+      "productName": "Iceberg Lettuce",
+      "sizeText": "1 head",
+      "unitPrice": 2.49,
+      "promoPrice": 1.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cherry-tomatoes",
+      "productName": "Cherry Tomatoes",
+      "sizeText": "1 pint",
+      "unitPrice": 4.99,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "roma-tomatoes",
+      "productName": "Roma Tomatoes",
+      "sizeText": "1 lb",
+      "unitPrice": 2.99,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "red-onions",
+      "productName": "Red Onions",
+      "sizeText": "1 lb",
+      "unitPrice": 2.49,
+      "promoPrice": 1.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "yellow-onions",
+      "productName": "Yellow Onions",
+      "sizeText": "3 lb bag",
+      "unitPrice": 3.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "russet-potatoes",
+      "productName": "Russet Potatoes",
+      "sizeText": "10 lb bag",
+      "unitPrice": 6.99,
+      "promoPrice": 4.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "red-potatoes",
+      "productName": "Red Potatoes",
+      "sizeText": "5 lb bag",
+      "unitPrice": 4.99,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "grapes",
+      "productName": "Grapes",
+      "sizeText": "1 lb",
+      "unitPrice": 3.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "watermelon",
+      "productName": "Watermelon",
+      "sizeText": "each",
+      "unitPrice": 6.99,
+      "promoPrice": 4.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "pineapple",
+      "productName": "Pineapple",
+      "sizeText": "each",
+      "unitPrice": 4.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "mangoes",
+      "productName": "Mangoes",
+      "sizeText": "each",
+      "unitPrice": 1.99,
+      "promoPrice": 1.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "peaches",
+      "productName": "Peaches",
+      "sizeText": "1 lb",
+      "unitPrice": 3.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "strawberries",
+      "productName": "Strawberries",
+      "sizeText": "1 lb",
+      "unitPrice": 4.99,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "bagels",
+      "productName": "Bagels",
+      "sizeText": "6 count",
+      "unitPrice": 4.99,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "english-muffins",
+      "productName": "English Muffins",
+      "sizeText": "6 count",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "dinner-rolls",
+      "productName": "Dinner Rolls",
+      "sizeText": "12 count",
+      "unitPrice": 4.99,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "orange-juice",
+      "productName": "Orange Juice",
+      "sizeText": "64 oz",
+      "unitPrice": 5.99,
+      "promoPrice": 4.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "apple-juice",
+      "productName": "Apple Juice",
+      "sizeText": "64 oz",
+      "unitPrice": 4.99,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cranberry-juice",
+      "productName": "Cranberry Juice",
+      "sizeText": "64 oz",
+      "unitPrice": 5.99,
+      "promoPrice": 4.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "ground-coffee",
+      "productName": "Coffee Ground",
+      "sizeText": "12 oz",
+      "unitPrice": 7.99,
+      "promoPrice": 5.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "tea-bags",
+      "productName": "Tea Bags",
+      "sizeText": "100 count",
+      "unitPrice": 4.99,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "laundry-detergent",
+      "productName": "Laundry Detergent",
+      "sizeText": "100 oz",
+      "unitPrice": 12.99,
+      "promoPrice": 9.99,
+      "promoEnds": "2024-11-10"
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+spring:
+  application:
+    name: smartcart-backend
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${GMAIL_USER:}
+    password: ${GMAIL_APP_PASS:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false
+    include-message: always
+    include-stacktrace: on_param
+    include-binding-errors: always
+
+aws:
+  region: ${AWS_REGION:us-east-1}
+  access-key-id: ${AWS_ACCESS_KEY_ID:}
+  secret-access-key: ${AWS_SECRET_ACCESS_KEY:}
+  dynamo:
+    endpoint: ${DYNAMO_ENDPOINT:}
+  s3:
+    bucket: ${S3_BUCKET:smartcart-receipts-dev}
+    endpoint: ${AWS_S3_ENDPOINT:}
+  ses:
+    enabled: ${AWS_SES_ENABLED:false}
+    endpoint: ${AWS_SES_ENDPOINT:}
+    from-email: ${AWS_SES_FROM_EMAIL:noreply@smartcart.com}
+  cloudwatch:
+    namespace: ${CLOUDWATCH_NAMESPACE:SmartCart}
+
+gmail:
+  enabled: ${GMAIL_ENABLED:false}
+  user: ${GMAIL_USER:}
+
+jwt:
+  secret: ${JWT_SECRET:your-256-bit-secret-key-change-in-production-minimum-32-characters-long}
+  access-token-expiration: ${JWT_ACCESS_TOKEN_EXPIRATION:3600000}  # 1 hour in milliseconds
+  refresh-token-expiration: ${JWT_REFRESH_TOKEN_EXPIRATION:604800000}  # 7 days in milliseconds
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  metrics:
+    export:
+      cloudwatch:
+        enabled: ${observability.enabled:false}
+        namespace: ${AWS_CLOUDWATCH_NAMESPACE:SmartCart}
+        step: 1m
+  endpoint:
+    health:
+      show-details: when-authorized
+      show-components: when-authorized
+
+observability:
+  enabled: ${OBSERVABILITY_ENABLED:false}
+
+deals:
+  import:
+    enabled: ${DEALS_IMPORT_ENABLED:true}
+    cron: ${DEALS_IMPORT_CRON:0 0 2 * * *}  # Daily at 2 AM
+    path: ${DEALS_IMPORT_PATH:src/main/resources/data/deals.comprehensive.json}

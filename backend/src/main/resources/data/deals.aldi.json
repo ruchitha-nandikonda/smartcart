@@ -1,0 +1,273 @@
+{
+  "storeId": "aldi",
+  "storeName": "Aldi",
+  "date": "20251105",
+  "sourceUrl": "https://www.aldi.us/en/weekly-specials/",
+  "deals": [
+    {
+      "productId": "salami",
+      "productName": "Salami",
+      "sizeText": "8 oz",
+      "unitPrice": 4.99,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "provolone",
+      "productName": "Provolone Cheese",
+      "sizeText": "8 oz",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "olive-oil",
+      "productName": "Olive Oil",
+      "sizeText": "17 oz",
+      "unitPrice": 6.99,
+      "promoPrice": 4.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "balsamic-vinegar",
+      "productName": "Balsamic Vinegar",
+      "sizeText": "8.5 oz",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "canned-tomatoes",
+      "productName": "Canned Tomatoes",
+      "sizeText": "14.5 oz",
+      "unitPrice": 1.49,
+      "promoPrice": 0.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "chickpeas",
+      "productName": "Chickpeas",
+      "sizeText": "15.5 oz",
+      "unitPrice": 1.19,
+      "promoPrice": 0.89,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "black-beans",
+      "productName": "Black Beans",
+      "sizeText": "15 oz",
+      "unitPrice": 1.19,
+      "promoPrice": 0.89,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "kidney-beans",
+      "productName": "Kidney Beans",
+      "sizeText": "15.5 oz",
+      "unitPrice": 1.19,
+      "promoPrice": 0.89,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "tuna",
+      "productName": "Tuna",
+      "sizeText": "5 oz",
+      "unitPrice": 1.49,
+      "promoPrice": 0.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "salmon",
+      "productName": "Salmon",
+      "sizeText": "6 oz",
+      "unitPrice": 6.99,
+      "promoPrice": 4.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "shrimp",
+      "productName": "Shrimp",
+      "sizeText": "12 oz",
+      "unitPrice": 8.99,
+      "promoPrice": 6.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "tilapia",
+      "productName": "Tilapia",
+      "sizeText": "1 lb",
+      "unitPrice": 5.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "lettuce",
+      "productName": "Lettuce",
+      "sizeText": "head",
+      "unitPrice": 1.99,
+      "promoPrice": 1.29,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "tomatoes",
+      "productName": "Tomatoes",
+      "sizeText": "1 lb",
+      "unitPrice": 2.99,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "bell-peppers",
+      "productName": "Bell Peppers",
+      "sizeText": "1 lb",
+      "unitPrice": 3.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "spinach",
+      "productName": "Spinach",
+      "sizeText": "10 oz",
+      "unitPrice": 2.49,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "carrots-bulk",
+      "productName": "Carrots",
+      "sizeText": "2 lb bag",
+      "unitPrice": 2.99,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cabbage",
+      "productName": "Cabbage",
+      "sizeText": "head",
+      "unitPrice": 1.99,
+      "promoPrice": 0.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cauliflower",
+      "productName": "Cauliflower",
+      "sizeText": "head",
+      "unitPrice": 3.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "sweet-potatoes",
+      "productName": "Sweet Potatoes",
+      "sizeText": "3 lb bag",
+      "unitPrice": 3.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "bananas-bulk",
+      "productName": "Bananas",
+      "sizeText": "3 lb",
+      "unitPrice": 2.49,
+      "promoPrice": 1.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "apples-bulk",
+      "productName": "Apples",
+      "sizeText": "3 lb bag",
+      "unitPrice": 4.99,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "oranges-bulk",
+      "productName": "Oranges",
+      "sizeText": "4 lb bag",
+      "unitPrice": 4.99,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "frozen-vegetables",
+      "productName": "Frozen Vegetables",
+      "sizeText": "16 oz",
+      "unitPrice": 1.99,
+      "promoPrice": 1.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "frozen-berries",
+      "productName": "Frozen Berries",
+      "sizeText": "12 oz",
+      "unitPrice": 3.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "pasta",
+      "productName": "Pasta",
+      "sizeText": "16 oz",
+      "unitPrice": 1.29,
+      "promoPrice": 0.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "sauce",
+      "productName": "Pasta Sauce",
+      "sizeText": "24 oz",
+      "unitPrice": 2.49,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "peanut-butter",
+      "productName": "Peanut Butter",
+      "sizeText": "18 oz",
+      "unitPrice": 3.49,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "jam",
+      "productName": "Strawberry Jam",
+      "sizeText": "17.6 oz",
+      "unitPrice": 2.99,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "coffee",
+      "productName": "Coffee",
+      "sizeText": "12 oz",
+      "unitPrice": 5.99,
+      "promoPrice": 4.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "cereal",
+      "productName": "Cereal",
+      "sizeText": "12 oz",
+      "unitPrice": 3.99,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "crackers",
+      "productName": "Crackers",
+      "sizeText": "8 oz",
+      "unitPrice": 2.49,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "chips",
+      "productName": "Potato Chips",
+      "sizeText": "8 oz",
+      "unitPrice": 2.99,
+      "promoPrice": 1.99,
+      "promoEnds": "2024-11-10"
+    }
+  ]
+}
+

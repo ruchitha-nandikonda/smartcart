@@ -1,0 +1,53 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode
+*.iml
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Frontend
+frontend/node_modules
+frontend/dist
+frontend/.vite
+
+# Backend
+backend/target
+backend/.mvn
+
+# Documentation
+*.md
+!README.md
+
+# Scripts
+*.sh
+scripts/
+
+# Infra
+infra/
+terraform/
+
+# Test files
+**/__tests__/
+**/*.test.*
+**/*.spec.*
+
+
+
+
+
+
+
+
+

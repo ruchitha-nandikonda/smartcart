@@ -1,0 +1,89 @@
+{
+  "storeId": "walmart",
+  "storeName": "Walmart",
+  "date": "20241104",
+  "sourceUrl": "https://www.walmart.com/weekly-ads",
+  "deals": [
+    {
+      "productId": "chicken-breast",
+      "productName": "Chicken Breast",
+      "sizeText": "1 lb",
+      "unitPrice": 6.99,
+      "promoPrice": 5.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "ground-beef",
+      "productName": "Ground Beef",
+      "sizeText": "1 lb",
+      "unitPrice": 5.99,
+      "promoPrice": 4.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "salmon",
+      "productName": "Salmon",
+      "sizeText": "1 lb",
+      "unitPrice": 9.99,
+      "promoPrice": 8.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "eggs",
+      "productName": "Eggs",
+      "sizeText": "1 dozen",
+      "unitPrice": 3.49,
+      "promoPrice": 2.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "milk",
+      "productName": "Milk",
+      "sizeText": "1 gallon",
+      "unitPrice": 3.99,
+      "promoPrice": 3.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "rice",
+      "productName": "Rice",
+      "sizeText": "5 lb",
+      "unitPrice": 4.99,
+      "promoPrice": 3.99,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "bread",
+      "productName": "Bread",
+      "sizeText": "1 loaf",
+      "unitPrice": 2.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "onions",
+      "productName": "Onions",
+      "sizeText": "1 lb",
+      "unitPrice": 1.99,
+      "promoPrice": 1.49,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "garlic",
+      "productName": "Garlic",
+      "sizeText": "1 bulb",
+      "unitPrice": 0.99,
+      "promoPrice": 0.79,
+      "promoEnds": "2024-11-10"
+    },
+    {
+      "productId": "tomatoes",
+      "productName": "Tomatoes",
+      "sizeText": "1 lb",
+      "unitPrice": 2.99,
+      "promoPrice": 2.49,
+      "promoEnds": "2024-11-10"
+    }
+  ]
+}
+

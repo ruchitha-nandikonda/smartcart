@@ -1,0 +1,1210 @@
+🚀 Starting SmartCart Backend with Gmail SMTP...
+
+📋 Loading environment variables from .env...
+✅ Environment variables loaded:
+   GMAIL_ENABLED=true
+   GMAIL_USER=smartcart2025.app@gmail.com
+   GMAIL_APP_PASS=enay****
+   DYNAMO_ENDPOINT=http://localhost:8000
+
+🔍 Verifying Spring Mail configuration...
+   Spring Boot will use these environment variables:
+   - spring.mail.username = $GMAIL_USER
+   - spring.mail.password = $GMAIL_APP_PASS
+
+⏳ Starting Spring Boot application...
+   Watch for 'Started SmartCartApplication' when ready
+
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/opt/homebrew/Cellar/maven/3.9.11/libexec/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.smartcart:backend >------------------------
+[INFO] Building SmartCart Backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.3.0:run (default-cli) > test-compile @ backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ backend ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 8 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ backend ---
+[INFO] skip non existing resourceDirectory /Users/ruchithanandikonda/Desktop/Project/smartcart/backend/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:3.3.0:run (default-cli) < test-compile @ backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.3.0:run (default-cli) @ backend ---
+[INFO] Attaching agents: []
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2025-11-10 01:13:31.194 [main] INFO  com.smartcart.SmartCartApplication - Starting SmartCartApplication using Java 25.0.1 with PID 22197 (/Users/ruchithanandikonda/Desktop/Project/smartcart/backend/target/classes started by ruchithanandikonda in /Users/ruchithanandikonda/Desktop/Project/smartcart/backend)
+2025-11-10 01:13:31.195 [main] INFO  com.smartcart.SmartCartApplication - No active profile set, falling back to 1 default profile: "default"
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/Users/ruchithanandikonda/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.24/tomcat-embed-core-10.1.24.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2025-11-10 01:13:31.653 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-11-10 01:13:31.657 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-10 01:13:31.657 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2025-11-10 01:13:31.677 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-10 01:13:31.678 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 464 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+2025-11-10 01:13:32.058 [main] INFO  c.s.c.config.DynamoTableInitializer - Table 'Users' already exists
+2025-11-10 01:13:32.063 [main] INFO  c.s.c.config.DynamoTableInitializer - Table 'PantryItems' already exists
+2025-11-10 01:13:32.069 [main] INFO  c.s.c.config.DynamoTableInitializer - Table 'Receipts' already exists
+2025-11-10 01:13:32.074 [main] INFO  c.s.c.config.DynamoTableInitializer - Table 'ShoppingLists' already exists
+2025-11-10 01:13:32.083 [main] INFO  c.s.c.config.DynamoTableInitializer - Table 'MealFavorites' already exists
+2025-11-10 01:13:32.087 [main] INFO  c.s.c.config.DynamoTableInitializer - Table 'Deals' already exists
+2025-11-10 01:13:32.090 [main] INFO  c.s.c.config.DynamoTableInitializer - Table 'OTPs' already exists
+2025-11-10 01:13:32.203 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: f5ba789e-9bdc-4993-bdf7-fafb775b1662
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-11-10 01:13:32.205 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-11-10 01:13:32.284 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2025-11-10 01:13:32.296 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1c22642d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75ac326f, org.springframework.security.web.context.SecurityContextHolderFilter@462f8fe9, org.springframework.security.web.header.HeaderWriterFilter@d0e4972, org.springframework.web.filter.CorsFilter@3730f716, org.springframework.security.web.authentication.logout.LogoutFilter@217c6a1e, com.smartcart.common.filter.RateLimitingFilter@11c713b7, com.smartcart.auth.filter.JwtAuthenticationFilter@21de60a7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@b2e1df3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1237cade, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@736f8837, org.springframework.security.web.session.SessionManagementFilter@4b762988, org.springframework.security.web.access.ExceptionTranslationFilter@7c200e57, org.springframework.security.web.access.intercept.AuthorizationFilter@49741274]
+2025-11-10 01:13:32.367 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-11-10 01:13:32.373 [main] INFO  com.smartcart.SmartCartApplication - Started SmartCartApplication in 1.352 seconds (process running for 1.469)
+2025-11-10 01:14:24.561 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-10 01:14:24.562 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-10 01:14:24.564 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-11-10 01:14:24.674 [http-nio-8080-exec-1] INFO  com.smartcart.auth.AuthController - Login request for email: ruchithasurender8208@gmail.com
+2025-11-10 01:14:24.838 [http-nio-8080-exec-1] INFO  com.smartcart.auth.AuthController - Login successful for email: ruchithasurender8208@gmail.com
+2025-11-10 01:14:24.846 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/auth/login | Status: 200 | Duration: 241ms | User: anonymous
+2025-11-10 01:14:25.019 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 18ms | User: 93e7d8e2
+2025-11-10 01:14:25.019 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 18ms | User: 93e7d8e2
+2025-11-10 01:14:25.105 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: 93e7d8e2
+2025-11-10 01:14:25.105 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 8ms | User: 93e7d8e2
+2025-11-10 01:14:25.121 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 120ms | User: 93e7d8e2
+2025-11-10 01:14:25.121 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 120ms | User: 93e7d8e2
+2025-11-10 01:14:25.121 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 120ms | User: 93e7d8e2
+2025-11-10 01:14:25.207 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: 93e7d8e2
+2025-11-10 01:14:25.207 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 7ms | User: 93e7d8e2
+2025-11-10 01:14:25.207 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 7ms | User: 93e7d8e2
+2025-11-10 01:14:29.878 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 20ms | User: 93e7d8e2
+2025-11-10 01:14:29.878 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 20ms | User: 93e7d8e2
+2025-11-10 01:14:29.973 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 13ms | User: 93e7d8e2
+2025-11-10 01:14:29.973 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 13ms | User: 93e7d8e2
+2025-11-10 01:14:30.820 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 4ms | User: 93e7d8e2
+2025-11-10 01:14:30.820 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 3ms | User: 93e7d8e2
+2025-11-10 01:14:30.827 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 11ms | User: 93e7d8e2
+2025-11-10 01:14:30.909 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 2ms | User: 93e7d8e2
+2025-11-10 01:14:30.909 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 3ms | User: 93e7d8e2
+2025-11-10 01:14:30.928 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 15ms | User: 93e7d8e2
+2025-11-10 01:14:43.339 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthController - Delete account request for userId: 93e7d8e2-8ad4-4f6f-a9a1-e612ad400eb8
+2025-11-10 01:14:43.340 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - Starting account deletion for userId: 93e7d8e2-8ad4-4f6f-a9a1-e612ad400eb8
+2025-11-10 01:14:43.384 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - Deleting all data for user: ruchithasurender8208@gmail.com (93e7d8e2-8ad4-4f6f-a9a1-e612ad400eb8)
+2025-11-10 01:14:43.396 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - Deleted pantry items for user: 93e7d8e2-8ad4-4f6f-a9a1-e612ad400eb8
+2025-11-10 01:14:43.402 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - Deleted receipts for user: 93e7d8e2-8ad4-4f6f-a9a1-e612ad400eb8
+2025-11-10 01:14:43.407 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - Deleted favorites for user: 93e7d8e2-8ad4-4f6f-a9a1-e612ad400eb8
+2025-11-10 01:14:43.411 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - Deleted shopping lists for user: 93e7d8e2-8ad4-4f6f-a9a1-e612ad400eb8
+2025-11-10 01:14:43.455 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - Deleted OTPs for email: ruchithasurender8208@gmail.com
+2025-11-10 01:14:43.463 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - Successfully deleted user account: ruchithasurender8208@gmail.com (93e7d8e2-8ad4-4f6f-a9a1-e612ad400eb8)
+2025-11-10 01:14:43.463 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthController - Account deleted successfully for userId: 93e7d8e2-8ad4-4f6f-a9a1-e612ad400eb8
+2025-11-10 01:14:43.465 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: DELETE /api/auth/account | Status: 204 | Duration: 129ms | User: 93e7d8e2
+2025-11-10 01:14:55.460 [http-nio-8080-exec-4] INFO  com.smartcart.auth.AuthController - Register request for email: ruchithasurender8208@gmail.com
+2025-11-10 01:14:55.461 [http-nio-8080-exec-4] INFO  com.smartcart.auth.AuthService - Starting registration for email: ruchithasurender8208@gmail.com
+2025-11-10 01:14:55.476 [http-nio-8080-exec-4] INFO  com.smartcart.auth.AuthService - Creating user account for: ruchithasurender8208@gmail.com
+2025-11-10 01:14:55.590 [http-nio-8080-exec-4] INFO  com.smartcart.auth.AuthService - User account created successfully: c39e9567-f75c-475c-8cf3-1f86b6c3043f
+2025-11-10 01:14:55.591 [http-nio-8080-exec-4] INFO  com.smartcart.auth.AuthService - Generated OTP for ruchithasurender8208@gmail.com: 782853
+2025-11-10 01:14:55.597 [http-nio-8080-exec-4] INFO  com.smartcart.auth.AuthService - OTP saved to database for: ruchithasurender8208@gmail.com
+2025-11-10 01:14:55.597 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - === ATTEMPTING TO SEND EMAIL ===
+2025-11-10 01:14:55.597 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - To: ruchithasurender8208@gmail.com
+2025-11-10 01:14:55.597 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - Gmail Enabled: true
+2025-11-10 01:14:55.597 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - JavaMailSender: Available
+2025-11-10 01:14:55.597 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - SES Enabled: true
+2025-11-10 01:14:55.597 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - SES Client: Available
+2025-11-10 01:14:55.597 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - Attempting to send via Gmail SMTP...
+2025-11-10 01:14:55.597 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - From Email: smartcart2025.app@gmail.com
+2025-11-10 01:14:55.597 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - Gmail User: smartcart2025.app@gmail.com
+2025-11-10 01:14:55.597 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - Mail Username: smartcart2025.app@gmail.com
+2025-11-10 01:14:55.614 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - Using From Email: smartcart2025.app@gmail.com
+2025-11-10 01:14:55.614 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - Sending email via JavaMailSender...
+2025-11-10 01:14:56.858 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - ✅ Email sent successfully via Gmail SMTP. To: ruchithasurender8208@gmail.com
+2025-11-10 01:14:56.859 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - === OTP EMAIL ===
+2025-11-10 01:14:56.859 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - To: ruchithasurender8208@gmail.com
+2025-11-10 01:14:56.859 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - Type: Registration
+2025-11-10 01:14:56.859 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - OTP Code: 782853
+2025-11-10 01:14:56.859 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - Gmail Enabled: true
+2025-11-10 01:14:56.859 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - SES Enabled: true
+2025-11-10 01:14:56.859 [http-nio-8080-exec-4] INFO  c.s.auth.service.EmailService - ================
+2025-11-10 01:14:56.860 [http-nio-8080-exec-4] INFO  com.smartcart.auth.AuthService - OTP email sent (or logged) for: ruchithasurender8208@gmail.com
+2025-11-10 01:14:56.860 [http-nio-8080-exec-4] INFO  com.smartcart.auth.AuthService - Email service enabled - OTP sent via email
+2025-11-10 01:14:56.860 [http-nio-8080-exec-4] INFO  com.smartcart.auth.AuthController - Registration OTP sent to email: ruchithasurender8208@gmail.com
+2025-11-10 01:14:56.863 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/auth/register | Status: 200 | Duration: 1412ms | User: anonymous
+2025-11-10 01:14:56.863 [http-nio-8080-exec-4] WARN  c.s.c.filter.RequestLoggingFilter - Slow request detected: POST /api/auth/register took 1412ms
+2025-11-10 01:15:18.103 [http-nio-8080-exec-7] INFO  com.smartcart.auth.AuthController - OTP verification request for email: ruchithasurender8208@gmail.com
+2025-11-10 01:15:18.149 [http-nio-8080-exec-7] INFO  com.smartcart.auth.AuthController - OTP verification successful for email: ruchithasurender8208@gmail.com
+2025-11-10 01:15:18.149 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/auth/verify-otp | Status: 200 | Duration: 60ms | User: anonymous
+2025-11-10 01:15:26.505 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 01:15:26.505 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 01:15:26.603 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:15:26.605 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:15:29.833 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 19ms | User: c39e9567
+2025-11-10 01:15:29.834 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 20ms | User: c39e9567
+2025-11-10 01:15:29.836 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 01:15:29.838 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 18ms | User: c39e9567
+2025-11-10 01:15:29.838 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 17ms | User: c39e9567
+2025-11-10 01:15:29.920 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:15:29.920 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:15:29.920 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:15:29.938 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:15:29.952 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:15:43.192 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 25ms | User: c39e9567
+2025-11-10 01:15:43.193 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 26ms | User: c39e9567
+2025-11-10 01:15:43.207 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:15:43.207 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:15:43.207 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:15:43.288 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:15:43.288 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:15:43.295 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:15:43.296 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:15:43.315 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:15:44.341 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:15:44.341 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:15:44.438 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:15:44.438 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:15:45.224 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:15:45.226 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 3ms | User: c39e9567
+2025-11-10 01:15:45.234 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:15:45.315 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 3ms | User: c39e9567
+2025-11-10 01:15:45.332 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 01:15:45.341 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 18ms | User: c39e9567
+2025-11-10 01:15:45.878 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 18ms | User: c39e9567
+2025-11-10 01:15:45.966 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:15:47.195 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:15:47.290 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:15:48.535 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:15:48.627 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:15:48.721 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:15:48.818 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:15:48.913 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:15:49.013 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 17ms | User: c39e9567
+2025-11-10 01:15:54.162 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:15:54.248 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:15:54.333 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:15:54.419 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:15:54.510 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:15:54.606 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 01:15:56.976 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:15:56.976 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:15:56.989 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 01:15:57.073 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:15:57.073 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:15:57.095 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 21ms | User: c39e9567
+2025-11-10 01:15:58.341 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 01:15:58.347 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 21ms | User: c39e9567
+2025-11-10 01:15:58.352 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 26ms | User: c39e9567
+2025-11-10 01:15:58.362 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:15:58.362 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:15:58.429 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:15:58.434 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:15:58.441 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:15:58.462 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:15:58.462 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:16:00.124 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:16:00.124 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:16:00.167 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:16:00.216 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:16:00.218 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:16:00.258 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:16:01.611 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 01:16:01.611 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:16:01.611 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:16:01.639 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:16:01.639 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:16:01.697 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:16:01.697 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:16:01.700 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:16:01.723 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:16:01.732 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:16:03.234 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 3ms | User: c39e9567
+2025-11-10 01:16:03.234 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 3ms | User: c39e9567
+2025-11-10 01:16:03.261 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 30ms | User: c39e9567
+2025-11-10 01:16:03.322 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:16:03.322 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:16:03.376 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 23ms | User: c39e9567
+2025-11-10 01:16:06.176 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:16:06.265 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:16:08.270 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:16:08.270 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:16:08.361 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 01:16:08.361 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 01:16:09.000 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:16:09.000 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:16:09.045 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:16:09.083 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:16:09.083 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:16:09.136 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 01:16:09.962 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 01:16:10.063 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 18ms | User: c39e9567
+2025-11-10 01:16:10.489 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:16:10.579 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:16:10.985 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 01:16:11.077 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:16:11.170 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:16:11.262 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:16:11.351 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:16:11.441 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:16:12.173 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:16:12.265 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:16:12.908 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:16:12.998 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:16:15.392 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:16:15.394 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:16:15.395 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 01:16:15.427 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:16:15.480 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:16:15.497 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:16:15.498 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:16:15.515 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:16:21.112 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 29ms | User: c39e9567
+2025-11-10 01:16:21.113 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 28ms | User: c39e9567
+2025-11-10 01:16:21.116 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 28ms | User: c39e9567
+2025-11-10 01:16:21.116 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 24ms | User: c39e9567
+2025-11-10 01:16:21.116 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 31ms | User: c39e9567
+2025-11-10 01:16:21.211 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:16:21.211 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:16:21.212 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:16:21.219 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:16:21.219 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:24:27.092 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 36ms | User: c39e9567
+2025-11-10 01:24:27.183 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:24:27.285 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:24:27.371 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:24:29.639 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:24:29.724 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:24:29.871 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 29ms | User: c39e9567
+2025-11-10 01:24:29.951 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 4ms | User: c39e9567
+2025-11-10 01:24:39.061 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:24:39.146 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:24:39.230 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:24:39.316 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:26:25.758 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 30ms | User: c39e9567
+2025-11-10 01:26:25.841 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:26:25.925 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:26:26.012 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:26:28.218 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:26:28.301 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:26:28.394 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:26:28.487 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:28:13.258 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 36ms | User: c39e9567
+2025-11-10 01:28:13.341 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 01:28:13.423 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 01:28:13.507 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:28:48.409 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 28ms | User: c39e9567
+2025-11-10 01:28:59.713 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:28:59.713 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:28:59.713 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:28:59.713 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:29:10.667 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:29:10.758 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 01:29:11.641 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:29:11.642 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 01:29:11.733 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:29:11.733 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:29:12.253 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:29:12.253 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:29:12.262 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:29:12.341 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:29:12.341 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:29:12.365 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 24ms | User: c39e9567
+2025-11-10 01:29:18.659 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 3ms | User: c39e9567
+2025-11-10 01:29:18.666 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:29:27.210 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 33ms | User: c39e9567
+2025-11-10 01:29:27.210 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 33ms | User: c39e9567
+2025-11-10 01:29:27.307 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:29:27.307 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:29:37.504 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/pantry | Status: 200 | Duration: 62ms | User: c39e9567
+2025-11-10 01:29:37.607 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 17ms | User: c39e9567
+2025-11-10 01:29:40.580 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 01:29:40.580 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 01:29:40.590 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:29:40.667 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:29:40.697 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:29:40.704 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:29:41.179 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:29:41.268 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:29:41.829 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:29:41.918 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:29:42.011 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 01:29:42.102 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:44:25.559 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 50ms | User: c39e9567
+2025-11-10 01:44:25.645 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:44:25.749 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:44:25.836 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:47:39.241 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 58ms | User: c39e9567
+2025-11-10 01:47:39.241 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 57ms | User: c39e9567
+2025-11-10 01:47:39.241 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 58ms | User: c39e9567
+2025-11-10 01:47:39.241 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 58ms | User: c39e9567
+2025-11-10 01:47:39.241 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 58ms | User: c39e9567
+2025-11-10 01:47:39.326 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:47:39.326 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:47:39.326 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:47:39.326 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:47:39.327 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:47:49.863 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 26ms | User: c39e9567
+2025-11-10 01:47:49.950 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:47:51.122 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:47:51.122 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:47:51.130 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:47:51.209 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 3ms | User: c39e9567
+2025-11-10 01:47:51.210 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 3ms | User: c39e9567
+2025-11-10 01:47:51.230 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:47:52.776 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 01:47:52.794 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:47:52.794 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:47:52.794 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 34ms | User: c39e9567
+2025-11-10 01:47:52.794 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:47:52.862 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:47:52.879 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:47:52.879 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:47:52.879 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:47:52.896 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:48:01.389 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:48:01.424 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:48:01.434 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:48:01.471 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:48:01.515 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:48:01.534 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:48:05.907 [http-nio-8080-exec-9] INFO  c.s.o.service.OptimizerService - Optimizing shopping list for meals: [Orange Chicken]
+2025-11-10 01:48:05.907 [http-nio-8080-exec-9] INFO  c.s.o.service.OptimizerService - Meal 'Orange Chicken' (1 servings) requires: {Rice=1.0, Soy Sauce=0.05, Orange Juice=0.25, Cornstarch=0.05, Chicken Breast=1.0}
+2025-11-10 01:48:05.910 [http-nio-8080-exec-9] INFO  c.s.o.service.OptimizerService - Total required ingredients (after combining): {Orange Juice=0.25, Soy Sauce=0.05, Cornstarch=0.05, Chicken Breast=1.0, Rice=1.0}
+2025-11-10 01:48:05.936 [http-nio-8080-exec-9] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Orange Juice' (searched in 3 stores). Available products: Ground Beef, Salmon, Chicken Breast, Eggs, Milk, Rice, Bread, Ground Beef, Salmon, Chicken Breast
+2025-11-10 01:48:05.937 [http-nio-8080-exec-9] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Soy Sauce' (searched in 3 stores). Available products: Ground Beef, Salmon, Chicken Breast, Eggs, Milk, Rice, Bread, Ground Beef, Salmon, Chicken Breast
+2025-11-10 01:48:05.937 [http-nio-8080-exec-9] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Cornstarch' (searched in 3 stores). Available products: Ground Beef, Salmon, Chicken Breast, Eggs, Milk, Rice, Bread, Ground Beef, Salmon, Chicken Breast
+2025-11-10 01:48:05.970 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/optimize | Status: 200 | Duration: 87ms | User: c39e9567
+2025-11-10 01:48:06.082 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 01:48:06.181 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 01:48:15.479 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 17ms | User: c39e9567
+2025-11-10 01:48:15.479 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 17ms | User: c39e9567
+2025-11-10 01:48:15.589 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:48:15.589 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:48:24.912 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:48:25.001 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:48:27.812 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:48:27.899 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:48:31.824 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:48:31.913 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:48:40.112 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:48:40.115 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:48:40.144 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 01:48:40.144 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:48:40.144 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:48:40.209 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:48:40.210 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:48:40.229 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:48:40.229 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:48:40.246 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:48:42.079 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:48:42.079 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:48:42.087 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:48:42.167 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:48:42.167 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:48:42.195 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:48:42.921 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:48:42.923 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 01:48:43.010 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:48:43.010 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:48:51.961 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/pantry | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 01:48:52.055 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:48:53.349 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 01:48:53.437 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:48:56.554 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:48:56.637 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:49:00.842 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 01:49:00.927 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:49:37.592 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 60ms | User: c39e9567
+2025-11-10 01:49:37.592 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 61ms | User: c39e9567
+2025-11-10 01:49:37.592 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 60ms | User: c39e9567
+2025-11-10 01:49:37.592 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 61ms | User: c39e9567
+2025-11-10 01:49:37.592 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 57ms | User: c39e9567
+2025-11-10 01:49:37.683 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:49:37.683 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:49:37.683 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:49:37.683 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:49:37.713 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:49:40.713 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 23ms | User: c39e9567
+2025-11-10 01:49:40.713 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 23ms | User: c39e9567
+2025-11-10 01:49:40.803 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:49:40.803 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:49:41.339 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:49:41.341 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:49:41.341 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:49:41.365 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:49:41.367 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:49:41.420 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 01:49:41.425 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:49:41.425 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:49:41.445 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 01:49:41.456 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:49:43.878 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:49:43.878 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:49:43.917 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 01:49:43.959 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 01:49:43.959 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 01:49:44.005 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:49:45.562 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/favorites | Status: 200 | Duration: 24ms | User: c39e9567
+2025-11-10 01:49:45.652 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:49:46.476 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 01:49:46.506 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:49:46.506 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:49:46.506 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:49:46.506 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:49:46.557 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:49:46.587 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 01:49:46.587 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 01:49:46.588 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:49:46.591 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:49:48.569 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:49:48.650 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:49:49.332 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:49:49.418 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:49:49.500 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:49:49.582 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 4ms | User: c39e9567
+2025-11-10 01:49:50.446 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:49:50.531 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:49:52.194 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:49:52.229 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 01:49:52.239 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:49:52.274 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 01:49:52.317 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 01:49:52.336 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:49:53.604 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:49:53.688 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:49:53.772 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:49:53.858 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:50:02.727 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:50:02.811 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:50:10.490 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 21ms | User: c39e9567
+2025-11-10 01:50:10.519 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:50:10.521 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 01:50:10.522 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 01:50:10.522 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:50:10.573 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:50:10.611 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 01:50:10.612 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 01:50:10.612 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 01:50:10.614 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:52:14.281 [http-nio-8080-exec-1] INFO  c.s.deals.service.DealService - Importing deals for store: Walmart on date: 20251110
+2025-11-10 01:52:14.377 [http-nio-8080-exec-1] INFO  c.s.deals.service.DealService - Successfully imported 31 deals for store: Walmart on date: 20251110
+2025-11-10 01:52:14.377 [http-nio-8080-exec-1] INFO  com.smartcart.deals.DealsController - Admin imported 31 deals for store: Walmart on date: 20251110
+2025-11-10 01:52:14.378 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 103ms | User: anonymous
+2025-11-10 01:52:14.459 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 8ms | User: anonymous
+2025-11-10 01:52:30.367 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 22ms | User: c39e9567
+2025-11-10 01:52:30.367 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 22ms | User: c39e9567
+2025-11-10 01:52:30.367 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 22ms | User: c39e9567
+2025-11-10 01:52:30.367 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 22ms | User: c39e9567
+2025-11-10 01:52:30.367 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 22ms | User: c39e9567
+2025-11-10 01:52:30.461 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:52:30.461 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:52:30.461 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:52:30.461 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:52:30.463 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:52:31.681 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:52:31.779 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:52:31.867 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:52:31.958 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:52:32.046 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:52:32.142 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 01:52:38.622 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 29ms | User: c39e9567
+2025-11-10 01:53:26.705 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 47ms | User: c39e9567
+2025-11-10 01:53:26.705 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 17ms | User: c39e9567
+2025-11-10 01:53:26.705 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 19ms | User: c39e9567
+2025-11-10 01:53:26.705 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 21ms | User: c39e9567
+2025-11-10 01:53:26.705 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 19ms | User: c39e9567
+2025-11-10 01:53:26.793 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 01:53:26.793 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 01:53:26.793 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 4ms | User: c39e9567
+2025-11-10 01:53:26.793 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:53:26.794 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 4ms | User: c39e9567
+2025-11-10 01:53:28.348 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 01:53:28.348 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 01:53:28.355 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 01:53:28.430 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:53:28.430 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 01:53:28.454 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 01:53:29.208 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:53:29.208 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:53:29.298 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:53:29.298 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 01:53:31.082 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:53:31.084 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:53:31.093 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:53:31.176 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 01:53:31.177 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 01:53:31.183 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 01:53:39.235 [http-nio-8080-exec-4] INFO  c.s.o.service.OptimizerService - Optimizing shopping list for meals: [Chicken Lo Mein]
+2025-11-10 01:53:39.236 [http-nio-8080-exec-4] INFO  c.s.o.service.OptimizerService - Meal 'Chicken Lo Mein' (1 servings) requires: {Soy Sauce=0.05, Bell Peppers=1.0, Carrots=0.5, Egg Noodles=0.5, Chicken Breast=0.75}
+2025-11-10 01:53:39.236 [http-nio-8080-exec-4] INFO  c.s.o.service.OptimizerService - Total required ingredients (after combining): {Egg Noodles=0.5, Carrots=0.5, Bell Peppers=1.0, Soy Sauce=0.05, Chicken Breast=0.75}
+2025-11-10 01:53:39.270 [http-nio-8080-exec-4] INFO  c.s.o.service.OptimizerService - Loaded 31 deals from database for 1 stores
+2025-11-10 01:53:39.272 [http-nio-8080-exec-4] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Egg Noodles' (searched in 1 stores). Available products: mayonnaise, cabbage, Potatoes, cilantro, Cornmeal, Eggs, Bread, cheese, pickled vegetables, flour
+2025-11-10 01:53:39.272 [http-nio-8080-exec-4] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Soy Sauce' (searched in 1 stores). Available products: mayonnaise, cabbage, Potatoes, cilantro, Cornmeal, Eggs, Bread, cheese, pickled vegetables, flour
+2025-11-10 01:53:39.280 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/optimize | Status: 200 | Duration: 55ms | User: c39e9567
+2025-11-10 01:53:39.378 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:53:39.465 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 01:53:48.792 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists/94744fb1-b22b-4a53-8369-9cba25c37348 | Status: 200 | Duration: 17ms | User: c39e9567
+2025-11-10 01:53:51.252 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists/5f7b01c1-1f9c-412e-a5f4-a8101e96df13 | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 01:54:58.120 [http-nio-8080-exec-1] INFO  c.s.deals.service.DealService - Importing deals for store: Walmart on date: 20251110
+2025-11-10 01:54:58.292 [http-nio-8080-exec-1] INFO  c.s.deals.service.DealService - Successfully imported 31 deals for store: Walmart on date: 20251110
+2025-11-10 01:54:58.292 [http-nio-8080-exec-1] INFO  com.smartcart.deals.DealsController - Admin imported 31 deals for store: Walmart on date: 20251110
+2025-11-10 01:54:58.293 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 177ms | User: anonymous
+2025-11-10 01:54:58.306 [http-nio-8080-exec-5] INFO  c.s.deals.service.DealService - Importing deals for store: Kroger on date: 20251110
+2025-11-10 01:54:58.352 [http-nio-8080-exec-5] INFO  c.s.deals.service.DealService - Successfully imported 21 deals for store: Kroger on date: 20251110
+2025-11-10 01:54:58.352 [http-nio-8080-exec-5] INFO  com.smartcart.deals.DealsController - Admin imported 21 deals for store: Kroger on date: 20251110
+2025-11-10 01:54:58.352 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 47ms | User: anonymous
+2025-11-10 01:54:58.365 [http-nio-8080-exec-10] INFO  c.s.deals.service.DealService - Importing deals for store: Target on date: 20251110
+2025-11-10 01:54:58.407 [http-nio-8080-exec-10] INFO  c.s.deals.service.DealService - Successfully imported 18 deals for store: Target on date: 20251110
+2025-11-10 01:54:58.407 [http-nio-8080-exec-10] INFO  com.smartcart.deals.DealsController - Admin imported 18 deals for store: Target on date: 20251110
+2025-11-10 01:54:58.407 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 43ms | User: anonymous
+2025-11-10 01:55:07.787 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 166ms | User: anonymous
+2025-11-10 01:55:36.449 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 60ms | User: anonymous
+2025-11-10 01:56:04.540 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 27ms | User: c39e9567
+2025-11-10 01:56:04.626 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 01:56:09.028 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 46ms | User: c39e9567
+2025-11-10 01:56:09.128 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 17ms | User: c39e9567
+2025-11-10 01:56:09.224 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 01:56:09.316 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 01:56:09.416 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 20ms | User: c39e9567
+2025-11-10 01:56:09.514 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 01:56:16.154 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 23ms | User: c39e9567
+2025-11-10 01:56:18.215 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:56:20.666 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 01:56:24.736 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 26ms | User: c39e9567
+2025-11-10 01:56:35.848 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 37ms | User: c39e9567
+2025-11-10 02:00:00.073 [scheduling-1] INFO  c.s.d.service.DealImportScheduler - Starting scheduled deal import job
+2025-11-10 02:00:00.074 [scheduling-1] INFO  c.s.d.service.DealImportScheduler - Importing deals for date: 20251110
+2025-11-10 02:00:00.078 [scheduling-1] INFO  c.s.deals.service.DealService - Importing deals for store: Walmart on date: 20251110
+2025-11-10 02:00:00.285 [scheduling-1] INFO  c.s.deals.service.DealService - Successfully imported 31 deals for store: Walmart on date: 20251110
+2025-11-10 02:00:00.285 [scheduling-1] INFO  c.s.d.service.DealImportScheduler - Successfully imported 31 deals for store: Walmart on date: 20251110
+2025-11-10 02:04:06.837 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 46ms | User: c39e9567
+2025-11-10 02:04:06.945 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 26ms | User: c39e9567
+2025-11-10 02:04:07.031 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 02:04:07.120 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 02:04:07.207 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 02:04:07.299 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 02:04:26.233 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 35ms | User: c39e9567
+2025-11-10 02:04:26.322 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 02:04:27.410 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 02:04:27.495 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 02:04:32.916 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists/5f7b01c1-1f9c-412e-a5f4-a8101e96df13 | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 02:04:35.150 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 02:04:35.233 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 02:04:38.890 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists/5f7b01c1-1f9c-412e-a5f4-a8101e96df13 | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 02:04:44.755 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 02:04:44.797 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 02:04:44.806 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 02:04:44.836 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 02:04:44.876 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 02:04:44.898 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 02:04:47.270 [http-nio-8080-exec-5] INFO  c.s.o.service.OptimizerService - Optimizing shopping list for meals: [Orange Chicken]
+2025-11-10 02:04:47.270 [http-nio-8080-exec-5] INFO  c.s.o.service.OptimizerService - Meal 'Orange Chicken' (1 servings) requires: {Rice=1.0, Soy Sauce=0.05, Orange Juice=0.25, Cornstarch=0.05, Chicken Breast=1.0}
+2025-11-10 02:04:47.271 [http-nio-8080-exec-5] INFO  c.s.o.service.OptimizerService - Total required ingredients (after combining): {Orange Juice=0.25, Soy Sauce=0.05, Cornstarch=0.05, Chicken Breast=1.0, Rice=1.0}
+2025-11-10 02:04:47.299 [http-nio-8080-exec-5] INFO  c.s.o.service.OptimizerService - Loaded 70 deals from database for 3 stores
+2025-11-10 02:04:47.301 [http-nio-8080-exec-5] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Orange Juice' (searched in 3 stores). Available products: mayonnaise, cabbage, Potatoes, cilantro, Cornmeal, Eggs, Bread, cheese, pickled vegetables, flour
+2025-11-10 02:04:47.306 [http-nio-8080-exec-5] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Soy Sauce' (searched in 3 stores). Available products: mayonnaise, cabbage, Potatoes, cilantro, Cornmeal, Eggs, Bread, cheese, pickled vegetables, flour
+2025-11-10 02:04:47.321 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/optimize | Status: 200 | Duration: 54ms | User: c39e9567
+2025-11-10 02:04:47.420 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 02:04:47.504 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 02:04:50.143 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 02:04:50.143 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 02:04:50.228 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 02:04:50.228 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 02:05:42.118 [http-nio-8080-exec-7] INFO  c.s.deals.service.DealService - Importing deals for store: Walmart on date: 20251110
+2025-11-10 02:05:42.244 [http-nio-8080-exec-7] INFO  c.s.deals.service.DealService - Successfully imported 8 deals for store: Walmart on date: 20251110
+2025-11-10 02:05:42.244 [http-nio-8080-exec-7] INFO  com.smartcart.deals.DealsController - Admin imported 8 deals for store: Walmart on date: 20251110
+2025-11-10 02:05:42.245 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 130ms | User: anonymous
+2025-11-10 02:05:42.254 [http-nio-8080-exec-6] INFO  c.s.deals.service.DealService - Importing deals for store: Walmart on date: 20251111
+2025-11-10 02:05:42.276 [http-nio-8080-exec-6] INFO  c.s.deals.service.DealService - Successfully imported 8 deals for store: Walmart on date: 20251111
+2025-11-10 02:05:42.276 [http-nio-8080-exec-6] INFO  com.smartcart.deals.DealsController - Admin imported 8 deals for store: Walmart on date: 20251111
+2025-11-10 02:05:42.276 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 22ms | User: anonymous
+2025-11-10 02:05:42.287 [http-nio-8080-exec-5] INFO  c.s.deals.service.DealService - Importing deals for store: Walmart on date: 20251112
+2025-11-10 02:05:42.307 [http-nio-8080-exec-5] INFO  c.s.deals.service.DealService - Successfully imported 8 deals for store: Walmart on date: 20251112
+2025-11-10 02:05:42.307 [http-nio-8080-exec-5] INFO  com.smartcart.deals.DealsController - Admin imported 8 deals for store: Walmart on date: 20251112
+2025-11-10 02:05:42.307 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 21ms | User: anonymous
+2025-11-10 02:05:42.317 [http-nio-8080-exec-10] INFO  c.s.deals.service.DealService - Importing deals for store: Walmart on date: 20251113
+2025-11-10 02:05:42.338 [http-nio-8080-exec-10] INFO  c.s.deals.service.DealService - Successfully imported 7 deals for store: Walmart on date: 20251113
+2025-11-10 02:05:42.339 [http-nio-8080-exec-10] INFO  com.smartcart.deals.DealsController - Admin imported 7 deals for store: Walmart on date: 20251113
+2025-11-10 02:05:42.339 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 22ms | User: anonymous
+2025-11-10 02:05:42.349 [http-nio-8080-exec-4] INFO  c.s.deals.service.DealService - Importing deals for store: Kroger on date: 20251110
+2025-11-10 02:05:42.410 [http-nio-8080-exec-4] INFO  c.s.deals.service.DealService - Successfully imported 6 deals for store: Kroger on date: 20251110
+2025-11-10 02:05:42.410 [http-nio-8080-exec-4] INFO  com.smartcart.deals.DealsController - Admin imported 6 deals for store: Kroger on date: 20251110
+2025-11-10 02:05:42.410 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 61ms | User: anonymous
+2025-11-10 02:05:42.419 [http-nio-8080-exec-2] INFO  c.s.deals.service.DealService - Importing deals for store: Kroger on date: 20251111
+2025-11-10 02:05:42.439 [http-nio-8080-exec-2] INFO  c.s.deals.service.DealService - Successfully imported 5 deals for store: Kroger on date: 20251111
+2025-11-10 02:05:42.439 [http-nio-8080-exec-2] INFO  com.smartcart.deals.DealsController - Admin imported 5 deals for store: Kroger on date: 20251111
+2025-11-10 02:05:42.439 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 20ms | User: anonymous
+2025-11-10 02:05:42.448 [http-nio-8080-exec-7] INFO  c.s.deals.service.DealService - Importing deals for store: Kroger on date: 20251112
+2025-11-10 02:05:42.463 [http-nio-8080-exec-7] INFO  c.s.deals.service.DealService - Successfully imported 5 deals for store: Kroger on date: 20251112
+2025-11-10 02:05:42.463 [http-nio-8080-exec-7] INFO  com.smartcart.deals.DealsController - Admin imported 5 deals for store: Kroger on date: 20251112
+2025-11-10 02:05:42.464 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 17ms | User: anonymous
+2025-11-10 02:05:42.473 [http-nio-8080-exec-6] INFO  c.s.deals.service.DealService - Importing deals for store: Kroger on date: 20251113
+2025-11-10 02:05:42.488 [http-nio-8080-exec-6] INFO  c.s.deals.service.DealService - Successfully imported 5 deals for store: Kroger on date: 20251113
+2025-11-10 02:05:42.488 [http-nio-8080-exec-6] INFO  com.smartcart.deals.DealsController - Admin imported 5 deals for store: Kroger on date: 20251113
+2025-11-10 02:05:42.488 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 16ms | User: anonymous
+2025-11-10 02:05:42.497 [http-nio-8080-exec-9] INFO  c.s.deals.service.DealService - Importing deals for store: Target on date: 20251110
+2025-11-10 02:05:42.551 [http-nio-8080-exec-9] INFO  c.s.deals.service.DealService - Successfully imported 5 deals for store: Target on date: 20251110
+2025-11-10 02:05:42.551 [http-nio-8080-exec-9] INFO  com.smartcart.deals.DealsController - Admin imported 5 deals for store: Target on date: 20251110
+2025-11-10 02:05:42.552 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 55ms | User: anonymous
+2025-11-10 02:05:42.560 [http-nio-8080-exec-4] INFO  c.s.deals.service.DealService - Importing deals for store: Target on date: 20251111
+2025-11-10 02:05:42.574 [http-nio-8080-exec-4] INFO  c.s.deals.service.DealService - Successfully imported 5 deals for store: Target on date: 20251111
+2025-11-10 02:05:42.574 [http-nio-8080-exec-4] INFO  com.smartcart.deals.DealsController - Admin imported 5 deals for store: Target on date: 20251111
+2025-11-10 02:05:42.574 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 14ms | User: anonymous
+2025-11-10 02:05:42.583 [http-nio-8080-exec-2] INFO  c.s.deals.service.DealService - Importing deals for store: Target on date: 20251112
+2025-11-10 02:05:42.595 [http-nio-8080-exec-2] INFO  c.s.deals.service.DealService - Successfully imported 4 deals for store: Target on date: 20251112
+2025-11-10 02:05:42.595 [http-nio-8080-exec-2] INFO  com.smartcart.deals.DealsController - Admin imported 4 deals for store: Target on date: 20251112
+2025-11-10 02:05:42.595 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 13ms | User: anonymous
+2025-11-10 02:05:42.604 [http-nio-8080-exec-7] INFO  c.s.deals.service.DealService - Importing deals for store: Target on date: 20251113
+2025-11-10 02:05:42.636 [http-nio-8080-exec-7] INFO  c.s.deals.service.DealService - Successfully imported 4 deals for store: Target on date: 20251113
+2025-11-10 02:05:42.636 [http-nio-8080-exec-7] INFO  com.smartcart.deals.DealsController - Admin imported 4 deals for store: Target on date: 20251113
+2025-11-10 02:05:42.636 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/deals/admin/import | Status: 200 | Duration: 33ms | User: anonymous
+2025-11-10 02:05:55.584 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 45ms | User: c39e9567
+2025-11-10 02:05:55.584 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 45ms | User: c39e9567
+2025-11-10 02:05:55.669 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 02:05:55.669 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 02:06:00.626 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 51ms | User: c39e9567
+2025-11-10 02:06:00.760 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 19ms | User: c39e9567
+2025-11-10 02:06:00.857 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 02:06:00.952 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 02:06:01.049 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 02:06:01.147 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 18ms | User: c39e9567
+2025-11-10 02:06:16.071 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 42ms | User: c39e9567
+2025-11-10 02:06:22.863 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 20ms | User: c39e9567
+2025-11-10 02:06:22.959 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 18ms | User: c39e9567
+2025-11-10 02:06:23.061 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 17ms | User: c39e9567
+2025-11-10 02:06:23.155 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 02:06:23.250 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 02:06:23.344 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 02:17:15.307 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 47ms | User: anonymous
+2025-11-10 02:17:15.401 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 19ms | User: anonymous
+2025-11-10 02:17:15.504 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: anonymous
+2025-11-10 02:17:15.603 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 16ms | User: anonymous
+2025-11-10 02:17:15.709 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 16ms | User: anonymous
+2025-11-10 02:17:15.805 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 18ms | User: anonymous
+2025-11-10 02:17:20.862 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 40ms | User: anonymous
+2025-11-10 02:17:25.083 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 23ms | User: anonymous
+2025-11-10 02:17:27.316 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 18ms | User: anonymous
+2025-11-10 02:17:38.978 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 36ms | User: anonymous
+2025-11-10 02:17:39.086 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 25ms | User: anonymous
+2025-11-10 02:17:39.183 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 16ms | User: anonymous
+2025-11-10 02:17:39.277 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: anonymous
+2025-11-10 02:17:39.372 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 16ms | User: anonymous
+2025-11-10 02:17:39.468 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 18ms | User: anonymous
+2025-11-10 02:17:41.664 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 17ms | User: anonymous
+2025-11-10 02:17:44.517 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 17ms | User: anonymous
+2025-11-10 02:17:47.496 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 19ms | User: anonymous
+2025-11-10 02:17:49.980 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 23ms | User: anonymous
+2025-11-10 02:17:53.768 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 18ms | User: anonymous
+2025-11-10 02:18:11.964 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 16ms | User: anonymous
+2025-11-10 02:18:12.062 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: anonymous
+2025-11-10 02:18:12.151 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 13ms | User: anonymous
+2025-11-10 02:18:12.249 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 21ms | User: anonymous
+2025-11-10 02:18:12.342 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 17ms | User: anonymous
+2025-11-10 02:18:12.444 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: anonymous
+2025-11-10 02:22:51.907 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 55ms | User: anonymous
+2025-11-10 02:33:09.041 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 64ms | User: anonymous
+2025-11-10 02:33:09.152 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 13ms | User: anonymous
+2025-11-10 02:33:53.798 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 23ms | User: anonymous
+2025-11-10 02:33:53.894 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: anonymous
+2025-11-10 02:34:45.102 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 35ms | User: anonymous
+2025-11-10 02:34:45.343 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 20ms | User: anonymous
+2025-11-10 02:34:45.506 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: anonymous
+2025-11-10 02:34:45.634 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: anonymous
+2025-11-10 02:34:45.760 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: anonymous
+2025-11-10 02:34:45.889 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 17ms | User: anonymous
+2025-11-10 02:41:51.694 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 41ms | User: anonymous
+2025-11-10 02:41:51.794 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: anonymous
+2025-11-10 02:41:51.887 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 16ms | User: anonymous
+2025-11-10 02:41:51.983 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 17ms | User: anonymous
+2025-11-10 02:41:52.075 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: anonymous
+2025-11-10 02:41:52.166 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: anonymous
+2025-11-10 03:08:28.002 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 32ms | User: anonymous
+2025-11-10 03:08:28.098 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 11ms | User: anonymous
+2025-11-10 03:08:28.190 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: anonymous
+2025-11-10 03:08:28.285 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: anonymous
+2025-11-10 03:08:28.379 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: anonymous
+2025-11-10 03:08:28.473 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: anonymous
+2025-11-10 03:08:39.073 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 29ms | User: anonymous
+2025-11-10 03:08:39.073 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 30ms | User: anonymous
+2025-11-10 03:08:39.073 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 29ms | User: anonymous
+2025-11-10 03:08:39.073 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 30ms | User: anonymous
+2025-11-10 03:08:39.205 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 16ms | User: anonymous
+2025-11-10 03:08:39.232 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: anonymous
+2025-11-10 03:11:07.606 [http-nio-8080-exec-9] INFO  com.smartcart.auth.AuthController - Login request for email: ruchithasurender8208@gmail.com
+2025-11-10 03:11:07.745 [http-nio-8080-exec-9] INFO  com.smartcart.auth.AuthController - Login successful for email: ruchithasurender8208@gmail.com
+2025-11-10 03:11:07.745 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/auth/login | Status: 200 | Duration: 153ms | User: anonymous
+2025-11-10 03:11:07.885 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 17ms | User: c39e9567
+2025-11-10 03:11:07.886 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 18ms | User: c39e9567
+2025-11-10 03:11:07.901 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 33ms | User: c39e9567
+2025-11-10 03:11:07.901 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 30ms | User: c39e9567
+2025-11-10 03:11:07.901 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 33ms | User: c39e9567
+2025-11-10 03:11:07.967 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 03:11:07.968 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:11:07.983 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:11:08.013 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:11:08.013 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:11:09.515 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:11:09.516 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:11:09.555 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 03:11:09.598 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:11:09.598 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:11:09.640 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:11:17.542 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 03:11:17.636 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 03:11:17.732 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 03:11:17.828 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 03:11:17.920 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 03:11:18.014 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 03:11:18.955 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:11:19.043 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:20.061 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:11:20.061 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:11:20.066 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:11:20.153 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:11:20.159 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:11:20.169 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:11:20.847 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:11:20.850 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:11:20.881 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:11:20.881 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:11:20.881 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:11:20.931 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 03:11:20.932 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 03:11:20.965 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:11:20.965 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:11:20.970 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:11:21.432 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:11:21.432 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:11:21.520 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:21.520 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:23.933 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:11:23.934 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:11:24.020 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:24.020 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:25.162 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:11:25.248 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:11:27.859 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:27.859 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:27.945 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:11:27.946 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:34.295 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:11:34.295 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:11:34.383 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:34.383 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:36.086 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:11:36.086 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:11:36.092 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:11:36.173 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:11:36.173 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:11:36.179 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:11:41.929 [http-nio-8080-exec-6] INFO  c.s.o.service.OptimizerService - Optimizing shopping list for meals: [Pancakes]
+2025-11-10 03:11:41.930 [http-nio-8080-exec-6] INFO  c.s.o.service.OptimizerService - Meal 'Pancakes' (1 servings) requires: {Maple Syrup=0.25, Butter=0.25, Eggs=2.0, Flour=0.5}
+2025-11-10 03:11:41.930 [http-nio-8080-exec-6] INFO  c.s.o.service.OptimizerService - Total required ingredients (after combining): {Butter=0.25, Flour=0.5, Maple Syrup=0.25, Eggs=2.0}
+2025-11-10 03:11:41.946 [http-nio-8080-exec-6] INFO  c.s.o.service.OptimizerService - Loaded 19 deals from database for 3 stores
+2025-11-10 03:11:41.946 [http-nio-8080-exec-6] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Butter' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:11:41.947 [http-nio-8080-exec-6] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Flour' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:11:41.947 [http-nio-8080-exec-6] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Maple Syrup' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:11:41.953 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/optimize | Status: 200 | Duration: 31ms | User: c39e9567
+2025-11-10 03:11:42.051 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:42.053 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:11:42.135 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:42.136 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:43.209 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:11:43.211 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 03:11:43.295 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:11:43.295 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:24:29.507 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/pantry | Status: 200 | Duration: 48ms | User: c39e9567
+2025-11-10 03:24:29.611 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 18ms | User: c39e9567
+2025-11-10 03:24:35.219 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 35ms | User: c39e9567
+2025-11-10 03:24:35.219 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 33ms | User: c39e9567
+2025-11-10 03:24:35.220 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 37ms | User: c39e9567
+2025-11-10 03:24:35.226 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:24:35.230 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:24:35.306 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:24:35.309 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:24:35.309 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:24:35.341 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:24:35.342 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:27:13.800 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 42ms | User: c39e9567
+2025-11-10 03:27:13.800 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 42ms | User: c39e9567
+2025-11-10 03:27:13.887 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:27:13.887 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:27:23.798 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/pantry | Status: 200 | Duration: 17ms | User: c39e9567
+2025-11-10 03:27:23.884 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:27:25.955 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:27:25.955 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:27:25.961 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:27:26.044 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:27:26.044 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:27:26.060 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 03:27:27.348 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:27:27.349 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:27:27.437 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:27:27.437 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:27:32.251 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 23ms | User: c39e9567
+2025-11-10 03:27:32.251 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 4ms | User: c39e9567
+2025-11-10 03:27:32.345 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:27:32.345 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:27:39.408 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:27:39.499 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:27:40.806 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:27:40.807 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:27:40.893 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:27:40.893 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:27:52.108 [http-nio-8080-exec-7] INFO  c.s.o.service.OptimizerService - Optimizing shopping list for meals: [Pancakes]
+2025-11-10 03:27:52.109 [http-nio-8080-exec-7] INFO  c.s.o.service.OptimizerService - Meal 'Pancakes' (1 servings) requires: {Maple Syrup=0.25, Butter=0.25, Eggs=2.0, Flour=0.5}
+2025-11-10 03:27:52.109 [http-nio-8080-exec-7] INFO  c.s.o.service.OptimizerService - Total required ingredients (after combining): {Butter=0.25, Flour=0.5, Maple Syrup=0.25, Eggs=2.0}
+2025-11-10 03:27:52.135 [http-nio-8080-exec-7] INFO  c.s.o.service.OptimizerService - Loaded 19 deals from database for 3 stores
+2025-11-10 03:27:52.136 [http-nio-8080-exec-7] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Butter' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:27:52.136 [http-nio-8080-exec-7] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Flour' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:27:52.137 [http-nio-8080-exec-7] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Maple Syrup' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:27:52.146 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/optimize | Status: 200 | Duration: 40ms | User: c39e9567
+2025-11-10 03:27:54.922 [http-nio-8080-exec-8] INFO  c.s.o.service.OptimizerService - Optimizing shopping list for meals: [Pancakes]
+2025-11-10 03:27:54.922 [http-nio-8080-exec-8] INFO  c.s.o.service.OptimizerService - Meal 'Pancakes' (1 servings) requires: {Maple Syrup=0.25, Butter=0.25, Eggs=2.0, Flour=0.5}
+2025-11-10 03:27:54.922 [http-nio-8080-exec-8] INFO  c.s.o.service.OptimizerService - Total required ingredients (after combining): {Butter=0.25, Flour=0.5, Maple Syrup=0.25, Eggs=2.0}
+2025-11-10 03:27:54.947 [http-nio-8080-exec-8] INFO  c.s.o.service.OptimizerService - Loaded 19 deals from database for 3 stores
+2025-11-10 03:27:54.947 [http-nio-8080-exec-8] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Butter' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:27:54.948 [http-nio-8080-exec-8] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Flour' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:27:54.949 [http-nio-8080-exec-8] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Maple Syrup' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:27:54.954 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/optimize | Status: 200 | Duration: 34ms | User: c39e9567
+2025-11-10 03:27:55.690 [http-nio-8080-exec-6] INFO  c.s.o.service.OptimizerService - Optimizing shopping list for meals: [Pancakes]
+2025-11-10 03:27:55.690 [http-nio-8080-exec-6] INFO  c.s.o.service.OptimizerService - Meal 'Pancakes' (1 servings) requires: {Maple Syrup=0.25, Butter=0.25, Eggs=2.0, Flour=0.5}
+2025-11-10 03:27:55.690 [http-nio-8080-exec-6] INFO  c.s.o.service.OptimizerService - Total required ingredients (after combining): {Butter=0.25, Flour=0.5, Maple Syrup=0.25, Eggs=2.0}
+2025-11-10 03:27:55.723 [http-nio-8080-exec-6] INFO  c.s.o.service.OptimizerService - Loaded 19 deals from database for 3 stores
+2025-11-10 03:27:55.723 [http-nio-8080-exec-6] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Butter' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:27:55.724 [http-nio-8080-exec-6] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Flour' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:27:55.724 [http-nio-8080-exec-6] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Maple Syrup' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:27:55.730 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/optimize | Status: 200 | Duration: 42ms | User: c39e9567
+2025-11-10 03:30:39.315 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 31ms | User: c39e9567
+2025-11-10 03:30:39.315 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 31ms | User: c39e9567
+2025-11-10 03:30:39.398 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:30:39.399 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:31:02.644 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 30ms | User: c39e9567
+2025-11-10 03:31:02.649 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 35ms | User: c39e9567
+2025-11-10 03:31:02.727 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:31:02.739 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 03:31:29.558 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 30ms | User: c39e9567
+2025-11-10 03:31:29.558 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 30ms | User: c39e9567
+2025-11-10 03:31:40.024 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 35ms | User: c39e9567
+2025-11-10 03:31:40.025 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 36ms | User: c39e9567
+2025-11-10 03:31:40.116 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:31:40.117 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 03:32:05.515 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 30ms | User: c39e9567
+2025-11-10 03:32:05.601 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:32:06.100 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:32:06.100 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:32:06.107 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:32:06.179 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:32:06.179 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:32:06.209 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:32:06.975 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:32:06.977 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 03:32:07.066 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:32:07.068 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:34:28.751 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 28ms | User: c39e9567
+2025-11-10 03:34:28.752 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 29ms | User: c39e9567
+2025-11-10 03:34:28.837 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:34:28.839 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:34:30.527 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:34:30.527 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:34:30.534 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:34:30.620 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:34:30.620 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:34:30.643 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 20ms | User: c39e9567
+2025-11-10 03:34:33.348 [http-nio-8080-exec-5] INFO  c.s.o.service.OptimizerService - Optimizing shopping list for meals: [Orange Chicken]
+2025-11-10 03:34:33.348 [http-nio-8080-exec-5] INFO  c.s.o.service.OptimizerService - Meal 'Orange Chicken' (1 servings) requires: {Rice=1.0, Soy Sauce=0.05, Orange Juice=0.25, Cornstarch=0.05, Chicken Breast=1.0}
+2025-11-10 03:34:33.348 [http-nio-8080-exec-5] INFO  c.s.o.service.OptimizerService - Total required ingredients (after combining): {Orange Juice=0.25, Soy Sauce=0.05, Cornstarch=0.05, Chicken Breast=1.0, Rice=1.0}
+2025-11-10 03:34:33.371 [http-nio-8080-exec-5] INFO  c.s.o.service.OptimizerService - Loaded 19 deals from database for 3 stores
+2025-11-10 03:34:33.371 [http-nio-8080-exec-5] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Orange Juice' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:34:33.372 [http-nio-8080-exec-5] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Soy Sauce' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:34:33.373 [http-nio-8080-exec-5] WARN  c.s.o.service.OptimizerService - No deal found for product: 'Rice' (searched in 3 stores). Available products: chicken breast, garlic, bread, Salmon, sour cream, Pickled Vegetables, salmon, Cheese, Bread, cheese
+2025-11-10 03:34:33.383 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/optimize | Status: 200 | Duration: 38ms | User: c39e9567
+2025-11-10 03:34:33.481 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:34:33.483 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:34:33.566 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:34:33.568 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:36:55.940 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists/a867f7c7-ed96-4c0f-a814-78736b51bf23 | Status: 200 | Duration: 54ms | User: c39e9567
+2025-11-10 03:37:02.154 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 17ms | User: c39e9567
+2025-11-10 03:37:02.158 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 21ms | User: c39e9567
+2025-11-10 03:37:02.241 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:37:02.245 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:37:08.738 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists/a867f7c7-ed96-4c0f-a814-78736b51bf23 | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:37:10.925 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 28ms | User: c39e9567
+2025-11-10 03:37:10.927 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 29ms | User: c39e9567
+2025-11-10 03:37:11.011 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:37:11.013 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:39:16.145 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 47ms | User: c39e9567
+2025-11-10 03:39:16.145 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 47ms | User: c39e9567
+2025-11-10 03:39:16.233 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:39:16.236 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 03:39:20.371 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists/a94e238d-5046-42f9-8f2a-37ddccced85d | Status: 200 | Duration: 19ms | User: c39e9567
+2025-11-10 03:39:22.409 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 27ms | User: c39e9567
+2025-11-10 03:39:22.411 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 29ms | User: c39e9567
+2025-11-10 03:39:22.496 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:39:22.500 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:42:01.692 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 34ms | User: c39e9567
+2025-11-10 03:42:01.692 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 34ms | User: c39e9567
+2025-11-10 03:42:01.692 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 34ms | User: c39e9567
+2025-11-10 03:42:01.692 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 34ms | User: c39e9567
+2025-11-10 03:42:01.693 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 35ms | User: c39e9567
+2025-11-10 03:42:01.781 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:42:01.781 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:42:01.781 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:42:01.781 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:42:01.782 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 03:42:02.943 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:42:02.943 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:42:03.035 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:42:03.035 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:42:04.748 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:42:04.748 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:42:04.757 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:42:04.832 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 03:42:04.832 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 2ms | User: c39e9567
+2025-11-10 03:42:04.847 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:42:05.727 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:42:05.727 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:42:05.818 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:42:05.818 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:42:06.222 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:42:06.223 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:42:06.225 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 03:42:06.250 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:42:06.250 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:42:06.309 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:42:06.309 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:42:06.311 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:42:06.342 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 03:42:06.342 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 03:42:06.963 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:42:06.963 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:42:06.968 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:42:07.056 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:42:07.057 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 0ms | User: c39e9567
+2025-11-10 03:42:07.062 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 03:42:07.548 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:42:07.550 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:42:07.644 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 18ms | User: c39e9567
+2025-11-10 03:42:07.644 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 03:42:08.183 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:42:08.184 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:42:08.225 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:42:08.261 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:42:08.261 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: c39e9567
+2025-11-10 03:42:08.308 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:42:08.785 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:42:08.867 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:42:10.583 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 17ms | User: c39e9567
+2025-11-10 03:42:10.678 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 03:42:10.780 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 22ms | User: c39e9567
+2025-11-10 03:42:10.872 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 03:42:10.965 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 03:42:11.058 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/deals | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 03:42:11.592 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:42:11.678 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:42:12.499 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 03:42:12.499 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 03:42:12.502 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 03:42:12.529 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:42:12.530 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:42:12.583 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 03:42:12.583 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:42:12.586 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:42:12.617 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 4ms | User: c39e9567
+2025-11-10 03:42:12.618 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 03:42:13.047 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:42:13.047 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:42:13.139 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:42:13.139 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:42:14.002 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:42:14.005 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:42:14.090 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:42:14.092 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:42:19.012 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists/a867f7c7-ed96-4c0f-a814-78736b51bf23 | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:42:21.466 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:42:21.466 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:42:21.551 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:42:21.553 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:42:28.398 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 15ms | User: c39e9567
+2025-11-10 03:42:28.399 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 03:42:28.399 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 03:42:28.399 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 03:47:25.920 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 38ms | User: c39e9567
+2025-11-10 03:47:25.920 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 38ms | User: c39e9567
+2025-11-10 03:47:26.010 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:47:26.012 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 03:48:23.583 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 31ms | User: c39e9567
+2025-11-10 03:48:23.584 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 32ms | User: c39e9567
+2025-11-10 03:48:23.690 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 27ms | User: c39e9567
+2025-11-10 03:48:23.690 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 27ms | User: c39e9567
+2025-11-10 03:48:25.743 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 12ms | User: c39e9567
+2025-11-10 03:48:25.744 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 13ms | User: c39e9567
+2025-11-10 03:48:25.827 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:48:25.829 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:48:31.940 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:48:31.941 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:48:31.946 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 14ms | User: c39e9567
+2025-11-10 03:48:31.947 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 16ms | User: c39e9567
+2025-11-10 03:48:46.835 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 37ms | User: c39e9567
+2025-11-10 03:48:46.836 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 38ms | User: c39e9567
+2025-11-10 03:48:46.924 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:48:46.926 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:50:07.121 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 38ms | User: c39e9567
+2025-11-10 03:50:07.122 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 39ms | User: c39e9567
+2025-11-10 03:50:29.083 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 32ms | User: c39e9567
+2025-11-10 03:50:29.083 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 32ms | User: c39e9567
+2025-11-10 03:51:01.924 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 43ms | User: c39e9567
+2025-11-10 03:51:01.924 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 43ms | User: c39e9567
+2025-11-10 03:51:02.010 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:51:02.081 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:51:10.110 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 22ms | User: c39e9567
+2025-11-10 03:51:10.132 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:51:10.134 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:51:10.138 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:51:10.140 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:51:10.195 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:51:10.215 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:51:10.219 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 7ms | User: c39e9567
+2025-11-10 03:51:10.231 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 03:51:10.233 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:51:11.695 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:51:11.695 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: c39e9567
+2025-11-10 03:51:11.783 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:51:11.783 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 10ms | User: c39e9567
+2025-11-10 03:52:25.934 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 31ms | User: c39e9567
+2025-11-10 03:52:25.934 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 31ms | User: c39e9567
+2025-11-10 03:53:56.831 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 32ms | User: c39e9567
+2025-11-10 03:53:56.831 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 32ms | User: c39e9567
+2025-11-10 03:56:25.372 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 32ms | User: c39e9567
+2025-11-10 03:56:25.372 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 32ms | User: c39e9567
+2025-11-10 03:56:25.459 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: c39e9567
+2025-11-10 03:56:25.460 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 11ms | User: c39e9567
+2025-11-10 03:56:41.825 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 65ms | User: c39e9567
+2025-11-10 03:56:41.825 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 65ms | User: c39e9567
+2025-11-10 03:56:41.907 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 5ms | User: c39e9567
+2025-11-10 03:56:41.908 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 6ms | User: c39e9567
+2025-11-10 18:04:24.364 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthController - Register request for email: ruchithajobit@gmail.com
+2025-11-10 18:04:24.365 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - Starting registration for email: ruchithajobit@gmail.com
+2025-11-10 18:04:24.459 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - Creating user account for: ruchithajobit@gmail.com
+2025-11-10 18:04:24.561 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - User account created successfully: b77ad5d4-a4a7-4d0d-8d6f-c353158178b7
+2025-11-10 18:04:24.561 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - Generated OTP for ruchithajobit@gmail.com: 001796
+2025-11-10 18:04:24.572 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - OTP saved to database for: ruchithajobit@gmail.com
+2025-11-10 18:04:24.573 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - === ATTEMPTING TO SEND EMAIL ===
+2025-11-10 18:04:24.573 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - To: ruchithajobit@gmail.com
+2025-11-10 18:04:24.573 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - Gmail Enabled: true
+2025-11-10 18:04:24.573 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - JavaMailSender: Available
+2025-11-10 18:04:24.573 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - SES Enabled: true
+2025-11-10 18:04:24.573 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - SES Client: Available
+2025-11-10 18:04:24.573 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - Attempting to send via Gmail SMTP...
+2025-11-10 18:04:24.573 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - From Email: smartcart2025.app@gmail.com
+2025-11-10 18:04:24.573 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - Gmail User: smartcart2025.app@gmail.com
+2025-11-10 18:04:24.573 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - Mail Username: smartcart2025.app@gmail.com
+2025-11-10 18:04:24.583 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - Using From Email: smartcart2025.app@gmail.com
+2025-11-10 18:04:24.584 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - Sending email via JavaMailSender...
+2025-11-10 18:04:26.009 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - ✅ Email sent successfully via Gmail SMTP. To: ruchithajobit@gmail.com
+2025-11-10 18:04:26.009 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - === OTP EMAIL ===
+2025-11-10 18:04:26.010 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - To: ruchithajobit@gmail.com
+2025-11-10 18:04:26.010 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - Type: Registration
+2025-11-10 18:04:26.010 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - OTP Code: 001796
+2025-11-10 18:04:26.010 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - Gmail Enabled: true
+2025-11-10 18:04:26.010 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - SES Enabled: true
+2025-11-10 18:04:26.010 [http-nio-8080-exec-2] INFO  c.s.auth.service.EmailService - ================
+2025-11-10 18:04:26.010 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - OTP email sent (or logged) for: ruchithajobit@gmail.com
+2025-11-10 18:04:26.010 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthService - Email service enabled - OTP sent via email
+2025-11-10 18:04:26.010 [http-nio-8080-exec-2] INFO  com.smartcart.auth.AuthController - Registration OTP sent to email: ruchithajobit@gmail.com
+2025-11-10 18:04:26.012 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/auth/register | Status: 200 | Duration: 1710ms | User: anonymous
+2025-11-10 18:04:26.012 [http-nio-8080-exec-2] WARN  c.s.c.filter.RequestLoggingFilter - Slow request detected: POST /api/auth/register took 1710ms
+2025-11-10 18:04:36.648 [http-nio-8080-exec-3] INFO  com.smartcart.auth.AuthController - OTP verification request for email: ruchithajobit@gmail.com
+2025-11-10 18:04:36.703 [http-nio-8080-exec-3] INFO  com.smartcart.auth.AuthController - OTP verification successful for email: ruchithajobit@gmail.com
+2025-11-10 18:04:36.704 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/auth/verify-otp | Status: 200 | Duration: 72ms | User: anonymous
+2025-11-10 18:04:50.211 [http-nio-8080-exec-5] INFO  com.smartcart.auth.AuthController - Login request for email: ruchithajobit@gmail.com
+2025-11-10 18:04:50.325 [http-nio-8080-exec-5] INFO  com.smartcart.auth.AuthController - Login successful for email: ruchithajobit@gmail.com
+2025-11-10 18:04:50.326 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/auth/login | Status: 200 | Duration: 127ms | User: anonymous
+2025-11-10 18:04:50.416 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 33ms | User: b77ad5d4
+2025-11-10 18:04:50.420 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 32ms | User: b77ad5d4
+2025-11-10 18:04:50.424 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 37ms | User: b77ad5d4
+2025-11-10 18:04:50.430 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 44ms | User: b77ad5d4
+2025-11-10 18:04:50.437 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 51ms | User: b77ad5d4
+2025-11-10 18:04:50.439 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: b77ad5d4
+2025-11-10 18:04:50.439 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 5ms | User: b77ad5d4
+2025-11-10 18:04:50.447 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 12ms | User: b77ad5d4
+2025-11-10 18:04:50.449 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 12ms | User: b77ad5d4
+2025-11-10 18:04:50.458 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 14ms | User: b77ad5d4
+2025-11-10 18:16:42.533 [http-nio-8080-exec-6] INFO  com.smartcart.auth.AuthController - Login request for email: ruchithajobit@gmail.com
+2025-11-10 18:16:42.688 [http-nio-8080-exec-6] INFO  com.smartcart.auth.AuthController - Login successful for email: ruchithajobit@gmail.com
+2025-11-10 18:16:42.690 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/auth/login | Status: 200 | Duration: 182ms | User: anonymous
+2025-11-10 18:16:42.796 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 37ms | User: b77ad5d4
+2025-11-10 18:16:42.799 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 40ms | User: b77ad5d4
+2025-11-10 18:16:42.802 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 43ms | User: b77ad5d4
+2025-11-10 18:16:42.802 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 43ms | User: b77ad5d4
+2025-11-10 18:16:42.802 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 43ms | User: b77ad5d4
+2025-11-10 18:16:42.831 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 11ms | User: b77ad5d4
+2025-11-10 18:16:42.832 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 9ms | User: b77ad5d4
+2025-11-10 18:16:42.832 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 9ms | User: b77ad5d4
+2025-11-10 18:16:42.832 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 9ms | User: b77ad5d4
+2025-11-10 18:16:42.836 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 14ms | User: b77ad5d4
+2025-11-10 19:28:43.377 [http-nio-8080-exec-10] INFO  com.smartcart.auth.AuthController - Login request for email: ruchithajobit@gmail.com
+2025-11-10 19:28:43.603 [http-nio-8080-exec-10] INFO  com.smartcart.auth.AuthController - Login successful for email: ruchithajobit@gmail.com
+2025-11-10 19:28:43.606 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: POST /api/auth/login | Status: 200 | Duration: 252ms | User: anonymous
+2025-11-10 19:28:43.813 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 87ms | User: b77ad5d4
+2025-11-10 19:28:43.852 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 119ms | User: b77ad5d4
+2025-11-10 19:28:43.852 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 119ms | User: b77ad5d4
+2025-11-10 19:28:43.853 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 128ms | User: b77ad5d4
+2025-11-10 19:28:43.867 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 140ms | User: b77ad5d4
+2025-11-10 19:28:43.876 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 17ms | User: b77ad5d4
+2025-11-10 19:28:43.902 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 15ms | User: b77ad5d4
+2025-11-10 19:28:43.902 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 16ms | User: b77ad5d4
+2025-11-10 19:28:43.902 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 13ms | User: b77ad5d4
+2025-11-10 19:28:43.920 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 24ms | User: b77ad5d4
+2025-11-10 19:28:51.857 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 30ms | User: b77ad5d4
+2025-11-10 19:28:51.857 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 30ms | User: b77ad5d4
+2025-11-10 19:28:51.870 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 8ms | User: b77ad5d4
+2025-11-10 19:28:51.870 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 7ms | User: b77ad5d4
+2025-11-10 19:28:53.235 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 10ms | User: b77ad5d4
+2025-11-10 19:28:53.236 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 12ms | User: b77ad5d4
+2025-11-10 19:28:53.244 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: b77ad5d4
+2025-11-10 19:28:53.252 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 27ms | User: b77ad5d4
+2025-11-10 19:28:53.252 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 8ms | User: b77ad5d4
+2025-11-10 19:28:53.259 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: b77ad5d4
+2025-11-10 19:29:01.109 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 28ms | User: b77ad5d4
+2025-11-10 19:29:01.125 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 7ms | User: b77ad5d4
+2025-11-10 19:29:04.314 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 22ms | User: b77ad5d4
+2025-11-10 19:29:04.339 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 19ms | User: b77ad5d4
+2025-11-10 19:29:06.882 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 1ms | User: b77ad5d4
+2025-11-10 19:29:06.882 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 1ms | User: b77ad5d4
+2025-11-10 19:29:06.889 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/categories | Status: 200 | Duration: 0ms | User: b77ad5d4
+2025-11-10 19:29:06.890 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/optimize/meals | Status: 200 | Duration: 0ms | User: b77ad5d4
+2025-11-10 19:29:06.896 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 15ms | User: b77ad5d4
+2025-11-10 19:29:06.941 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 37ms | User: b77ad5d4
+2025-11-10 19:29:32.832 [http-nio-8080-exec-1] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 128ms | User: b77ad5d4
+2025-11-10 19:29:32.833 [http-nio-8080-exec-7] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 128ms | User: b77ad5d4
+2025-11-10 19:29:32.832 [http-nio-8080-exec-2] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 128ms | User: b77ad5d4
+2025-11-10 19:29:32.832 [http-nio-8080-exec-9] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 127ms | User: b77ad5d4
+2025-11-10 19:29:32.843 [http-nio-8080-exec-8] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 139ms | User: b77ad5d4
+2025-11-10 19:29:32.878 [http-nio-8080-exec-6] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry/expiring | Status: 200 | Duration: 13ms | User: b77ad5d4
+2025-11-10 19:29:32.878 [http-nio-8080-exec-5] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/pantry | Status: 200 | Duration: 13ms | User: b77ad5d4
+2025-11-10 19:29:32.878 [http-nio-8080-exec-4] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/receipts | Status: 200 | Duration: 13ms | User: b77ad5d4
+2025-11-10 19:29:32.880 [http-nio-8080-exec-3] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/favorites | Status: 200 | Duration: 15ms | User: b77ad5d4
+2025-11-10 19:29:32.887 [http-nio-8080-exec-10] INFO  c.s.c.filter.RequestLoggingFilter - API Request: GET /api/shopping-lists | Status: 200 | Duration: 22ms | User: b77ad5d4
