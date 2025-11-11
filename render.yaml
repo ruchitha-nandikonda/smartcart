@@ -1,8 +1,6 @@
 services:
   - type: web
     name: smartcart-backend
-    env: java
+    runtime: docker
     rootDir: backend
-    buildCommand: mvn -DskipTests clean package
-    startCommand: java -jar target/backend-0.0.1-SNAPSHOT.jar
     plan: free
