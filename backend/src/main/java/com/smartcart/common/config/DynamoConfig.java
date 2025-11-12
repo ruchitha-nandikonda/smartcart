@@ -21,6 +21,12 @@ public class DynamoConfig {
     @Value("${aws.region:us-east-1}")
     private String awsRegion;
     
+    @Value("${aws.access-key-id:}")
+    private String awsAccessKeyId;
+    
+    @Value("${aws.secret-access-key:}")
+    private String awsSecretAccessKey;
+    
     @Bean
     public DynamoDbClient dynamoDbClient() {
         var builder = DynamoDbClient.builder()
@@ -32,11 +38,15 @@ public class DynamoConfig {
             builder.endpointOverride(URI.create(dynamoEndpoint))
                    .credentialsProvider(StaticCredentialsProvider.create(
                            AwsBasicCredentials.create("local", "local")));
-        } else {
-            // For local development without AWS, use dummy credentials
-            // This allows the app to start without real AWS credentials
+        } else if (awsAccessKeyId != null && !awsAccessKeyId.trim().isEmpty() &&
+                   awsSecretAccessKey != null && !awsSecretAccessKey.trim().isEmpty()) {
+            // Use provided AWS credentials for production
             builder.credentialsProvider(StaticCredentialsProvider.create(
-                    AwsBasicCredentials.create("dummy", "dummy")));
+                    AwsBasicCredentials.create(awsAccessKeyId, awsSecretAccessKey)));
+        } else {
+            // Try to use default credentials provider (from environment variables, IAM role, etc.)
+            // This works on AWS EC2, ECS, Lambda, or when AWS_ACCESS_KEY_ID/AWS_SECRET_ACCESS_KEY are set
+            builder.credentialsProvider(DefaultCredentialsProvider.create());
         }
         
         return builder.build();
