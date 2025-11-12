@@ -72,13 +72,18 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration cfg = new CorsConfiguration();
-        cfg.setAllowedOrigins(java.util.List.of(
-                "https://smartcart-phi.vercel.app", // Vercel
-                "http://localhost:5173"             // local dev
+        
+        // Allow all Vercel domains and localhost for development
+        cfg.setAllowedOriginPatterns(java.util.List.of(
+                "https://*.vercel.app",           // All Vercel preview and production deployments
+                "http://localhost:*",              // Local development on any port
+                "https://localhost:*"              // Local HTTPS development
         ));
+        
         cfg.setAllowedMethods(java.util.List.of("GET","POST","PUT","DELETE","PATCH","OPTIONS"));
         cfg.setAllowedHeaders(java.util.List.of("*"));
         cfg.setAllowCredentials(true);
+        cfg.setMaxAge(3600L); // Cache preflight for 1 hour
 
         UrlBasedCorsConfigurationSource src = new UrlBasedCorsConfigurationSource();
         src.registerCorsConfiguration("/**", cfg);
