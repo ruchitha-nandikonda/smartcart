@@ -18,7 +18,8 @@ spring:
           writetimeout: 5000
 
 server:
-  port: 8080
+  port: ${PORT:8080}
+  address: 0.0.0.0
   error:
     whitelabel:
       enabled: false
@@ -66,6 +67,15 @@ management:
     health:
       show-details: when-authorized
       show-components: when-authorized
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+    diskspace:
+      enabled: false  # Disable disk space check for Render
 
 observability:
   enabled: ${OBSERVABILITY_ENABLED:false}
