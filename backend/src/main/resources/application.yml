@@ -69,6 +69,11 @@ management:
       show-components: when-authorized
       probes:
         enabled: true
+      group:
+        liveness:
+          include: livenessState
+        readiness:
+          include: readinessState
   health:
     livenessstate:
       enabled: true
