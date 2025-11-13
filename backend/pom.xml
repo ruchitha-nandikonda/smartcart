@@ -117,6 +117,13 @@
             <version>8.10.1</version>
         </dependency>
         
+        <!-- SendGrid -->
+        <dependency>
+            <groupId>com.sendgrid</groupId>
+            <artifactId>sendgrid-java</artifactId>
+            <version>4.10.2</version>
+        </dependency>
+        
         <!-- Micrometer for Observability -->
         <dependency>
             <groupId>io.micrometer</groupId>

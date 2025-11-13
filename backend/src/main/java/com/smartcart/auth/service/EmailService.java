@@ -1,5 +1,12 @@
 package com.smartcart.auth.service;
 
+import com.sendgrid.Method;
+import com.sendgrid.Request;
+import com.sendgrid.Response;
+import com.sendgrid.SendGrid;
+import com.sendgrid.helpers.mail.Mail;
+import com.sendgrid.helpers.mail.objects.Content;
+import com.sendgrid.helpers.mail.objects.Email;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.slf4j.Logger;
@@ -38,7 +45,19 @@ public class EmailService {
     @Value("${spring.mail.username:}")
     private String mailUsername;
     
+    @Value("${sendgrid.enabled:false}")
+    private boolean sendgridEnabled;
+    
+    @Value("${sendgrid.api-key:}")
+    private String sendgridApiKey;
+    
+    @Value("${sendgrid.from-email:smartcart2025.app@gmail.com}")
+    private String sendgridFromEmail;
+    
     private String getFromEmail() {
+        if (sendgridEnabled && !sendgridFromEmail.isEmpty()) {
+            return sendgridFromEmail;
+        }
         if (gmailEnabled && !mailUsername.isEmpty()) {
             return mailUsername;
         }
@@ -81,6 +100,7 @@ public class EmailService {
         logger.info("To: {}", email);
         logger.info("Type: {}", type);
         logger.info("OTP Code: {}", otpCode);
+        logger.info("SendGrid Enabled: {}", sendgridEnabled);
         logger.info("Gmail Enabled: {}", gmailEnabled);
         logger.info("SES Enabled: {}", sesEnabled);
         logger.info("================");
@@ -124,6 +144,7 @@ public class EmailService {
         logger.info("=== PASSWORD RESET EMAIL ===");
         logger.info("To: {}", email);
         logger.info("Reset Token: {}", resetToken);
+        logger.info("SendGrid Enabled: {}", sendgridEnabled);
         logger.info("Gmail Enabled: {}", gmailEnabled);
         logger.info("SES Enabled: {}", sesEnabled);
         logger.info("============================");
@@ -132,10 +153,54 @@ public class EmailService {
     private void sendEmail(String toEmail, String subject, String bodyText, String bodyHtml) {
         logger.info("=== ATTEMPTING TO SEND EMAIL ===");
         logger.info("To: {}", toEmail);
+        logger.info("SendGrid Enabled: {}", sendgridEnabled);
         logger.info("Gmail Enabled: {}", gmailEnabled);
         logger.info("JavaMailSender: {}", javaMailSender != null ? "Available" : "NULL");
         logger.info("SES Enabled: {}", sesEnabled);
         logger.info("SES Client: {}", sesClient != null ? "Available" : "NULL");
+        
+        // Priority 1: Use SendGrid if enabled
+        if (sendgridEnabled && sendgridApiKey != null && !sendgridApiKey.trim().isEmpty()) {
+            try {
+                logger.info("Attempting to send via SendGrid...");
+                logger.info("From Email: {}", sendgridFromEmail);
+                
+                Email from = new Email(sendgridFromEmail, "SmartCart");
+                Email to = new Email(toEmail);
+                Content textContent = new Content("text/plain", bodyText);
+                Content htmlContent = new Content("text/html", bodyHtml);
+                Mail mail = new Mail(from, subject, to, textContent);
+                mail.addContent(htmlContent);
+                
+                SendGrid sg = new SendGrid(sendgridApiKey);
+                Request request = new Request();
+                request.setMethod(Method.POST);
+                request.setEndpoint("mail/send");
+                request.setBody(mail.build());
+                
+                Response response = sg.api(request);
+                
+                if (response.getStatusCode() >= 200 && response.getStatusCode() < 300) {
+                    logger.info("✅ Email sent successfully via SendGrid. Status: {}, To: {}", response.getStatusCode(), toEmail);
+                    return;
+                } else {
+                    logger.error("❌ SendGrid returned error status: {} - {}", response.getStatusCode(), response.getBody());
+                    logger.error("   Response headers: {}", response.getHeaders());
+                    // Fall through to try other methods
+                }
+            } catch (Exception e) {
+                logger.error("❌ Failed to send email via SendGrid: {}", e.getMessage(), e);
+                logger.error("   Error type: {}", e.getClass().getSimpleName());
+                // Fall through to try other methods
+            }
+        } else {
+            if (!sendgridEnabled) {
+                logger.debug("SendGrid is disabled (sendgridEnabled=false)");
+            }
+            if (sendgridApiKey == null || sendgridApiKey.trim().isEmpty()) {
+                logger.debug("SendGrid API key is not configured (SENDGRID_API_KEY env var)");
+            }
+        }
         
         // Check Spring Mail configuration
         if (javaMailSender == null) {
@@ -145,7 +210,7 @@ public class EmailService {
             logger.error("   Current mailUsername: '{}'", mailUsername.isEmpty() ? "EMPTY" : mailUsername);
         }
         
-        // Priority 1: Use Gmail SMTP if enabled
+        // Priority 2: Use Gmail SMTP if enabled
         if (gmailEnabled && javaMailSender != null) {
             try {
                 logger.info("Attempting to send via Gmail SMTP...");
@@ -199,7 +264,7 @@ public class EmailService {
             }
         }
         
-        // Priority 2: Use AWS SES if enabled
+        // Priority 3: Use AWS SES if enabled
         if (sesEnabled && sesClient != null) {
             try {
                 SendEmailRequest emailRequest = SendEmailRequest.builder()

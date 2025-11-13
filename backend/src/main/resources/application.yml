@@ -47,6 +47,11 @@ gmail:
   enabled: ${GMAIL_ENABLED:false}
   user: ${GMAIL_USER:}
 
+sendgrid:
+  enabled: ${SENDGRID_ENABLED:false}
+  api-key: ${SENDGRID_API_KEY:}
+  from-email: ${SENDGRID_FROM_EMAIL:smartcart2025.app@gmail.com}
+
 jwt:
   secret: ${JWT_SECRET:your-256-bit-secret-key-change-in-production-minimum-32-characters-long}
   access-token-expiration: ${JWT_ACCESS_TOKEN_EXPIRATION:3600000}  # 1 hour in milliseconds
