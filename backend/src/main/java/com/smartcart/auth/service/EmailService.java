@@ -7,6 +7,7 @@ import com.sendgrid.SendGrid;
 import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Content;
 import com.sendgrid.helpers.mail.objects.Email;
+import com.sendgrid.helpers.mail.objects.Personalization;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.slf4j.Logger;
@@ -167,10 +168,17 @@ public class EmailService {
                 
                 Email from = new Email(sendgridFromEmail, "SmartCart");
                 Email to = new Email(toEmail);
-                Content textContent = new Content("text/plain", bodyText);
-                Content htmlContent = new Content("text/html", bodyHtml);
-                Mail mail = new Mail(from, subject, to, textContent);
-                mail.addContent(htmlContent);
+                
+                // Create Mail object with HTML content (primary)
+                Mail mail = new Mail();
+                mail.setFrom(from);
+                mail.setSubject(subject);
+                mail.addContent(new Content("text/html", bodyHtml));
+                mail.addContent(new Content("text/plain", bodyText));
+                
+                Personalization personalization = new Personalization();
+                personalization.addTo(to);
+                mail.addPersonalization(personalization);
                 
                 SendGrid sg = new SendGrid(sendgridApiKey);
                 Request request = new Request();
