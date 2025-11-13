@@ -88,6 +88,7 @@ public class SecurityConfig {
         CorsConfiguration cfg = new CorsConfiguration();
         
         // Allow all Vercel domains and localhost for development
+        // Using patterns for wildcard support
         cfg.setAllowedOriginPatterns(java.util.List.of(
                 "https://*.vercel.app",           // All Vercel preview and production deployments
                 "http://localhost:*",              // Local development on any port
@@ -96,6 +97,7 @@ public class SecurityConfig {
         
         cfg.setAllowedMethods(java.util.List.of("GET","POST","PUT","DELETE","PATCH","OPTIONS"));
         cfg.setAllowedHeaders(java.util.List.of("*"));
+        cfg.setExposedHeaders(java.util.List.of("*"));
         cfg.setAllowCredentials(true);
         cfg.setMaxAge(3600L); // Cache preflight for 1 hour
 
