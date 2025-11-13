@@ -275,24 +275,31 @@ public class EmailService {
         // Priority 3: Use AWS SES if enabled
         if (sesEnabled && sesClient != null) {
             try {
+                // Use fully qualified name for AWS SES Content to avoid conflict with SendGrid Content
+                software.amazon.awssdk.services.ses.model.Content sesSubject = software.amazon.awssdk.services.ses.model.Content.builder()
+                    .data(subject)
+                    .charset("UTF-8")
+                    .build();
+                
+                software.amazon.awssdk.services.ses.model.Content sesTextContent = software.amazon.awssdk.services.ses.model.Content.builder()
+                    .data(bodyText)
+                    .charset("UTF-8")
+                    .build();
+                
+                software.amazon.awssdk.services.ses.model.Content sesHtmlContent = software.amazon.awssdk.services.ses.model.Content.builder()
+                    .data(bodyHtml)
+                    .charset("UTF-8")
+                    .build();
+                
                 SendEmailRequest emailRequest = SendEmailRequest.builder()
                     .destination(Destination.builder()
                         .toAddresses(toEmail)
                         .build())
                     .message(Message.builder()
-                        .subject(Content.builder()
-                            .data(subject)
-                            .charset("UTF-8")
-                            .build())
+                        .subject(sesSubject)
                         .body(Body.builder()
-                            .text(Content.builder()
-                                .data(bodyText)
-                                .charset("UTF-8")
-                                .build())
-                            .html(Content.builder()
-                                .data(bodyHtml)
-                                .charset("UTF-8")
-                                .build())
+                            .text(sesTextContent)
+                            .html(sesHtmlContent)
                             .build())
                         .build())
                     .source(sesFromEmail)
