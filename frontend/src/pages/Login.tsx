@@ -252,10 +252,13 @@ export default function Login() {
             
             <div className="space-y-4">
               {!isLogin && (
-                <>
-                  <p className="text-sm text-slate-200">
-                    Tell us your first and last name so we can personalize your dashboard.
-                  </p>
+      <>
+        <p className="text-sm text-slate-200">
+          Tell us your first and last name so we can personalize your dashboard.
+        </p>
+        <p className="mt-2 text-xs text-amber-200/90 font-semibold tracking-wide uppercase">
+          Didn’t get the verification email? Please check your spam or junk folder.
+        </p>
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div className="flex flex-col gap-1">
                       <label htmlFor="signup-first-name" className="text-xs uppercase tracking-wide text-slate-200/80">
