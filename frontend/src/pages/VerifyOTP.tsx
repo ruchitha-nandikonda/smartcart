@@ -263,6 +263,10 @@ export default function VerifyOTP() {
                       type="text"
                       inputMode="numeric"
                       maxLength={1}
+                      autoComplete="one-time-code"
+                      autoCorrect="off"
+                      autoCapitalize="none"
+                      pattern="[0-9]*"
                       value={digit}
                       onChange={(e) => handleOtpChange(index, e.target.value)}
                       onKeyDown={(e) => handleKeyDown(index, e)}
