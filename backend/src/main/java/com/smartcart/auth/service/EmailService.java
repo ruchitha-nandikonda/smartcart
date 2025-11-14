@@ -160,56 +160,6 @@ public class EmailService {
         logger.info("SES Enabled: {}", sesEnabled);
         logger.info("SES Client: {}", sesClient != null ? "Available" : "NULL");
         
-        // Priority 1: Use SendGrid if enabled
-        if (sendgridEnabled && sendgridApiKey != null && !sendgridApiKey.trim().isEmpty()) {
-            try {
-                logger.info("Attempting to send via SendGrid...");
-                logger.info("From Email: {}", sendgridFromEmail);
-                
-                Email from = new Email(sendgridFromEmail, "SmartCart");
-                Email to = new Email(toEmail);
-                
-                // Create Mail object - SendGrid requires text/plain BEFORE text/html
-                Mail mail = new Mail();
-                mail.setFrom(from);
-                mail.setSubject(subject);
-                mail.addContent(new Content("text/plain", bodyText));  // Must be first
-                mail.addContent(new Content("text/html", bodyHtml));   // Must be second
-                
-                Personalization personalization = new Personalization();
-                personalization.addTo(to);
-                mail.addPersonalization(personalization);
-                
-                SendGrid sg = new SendGrid(sendgridApiKey);
-                Request request = new Request();
-                request.setMethod(Method.POST);
-                request.setEndpoint("mail/send");
-                request.setBody(mail.build());
-                
-                Response response = sg.api(request);
-                
-                if (response.getStatusCode() >= 200 && response.getStatusCode() < 300) {
-                    logger.info("✅ Email sent successfully via SendGrid. Status: {}, To: {}", response.getStatusCode(), toEmail);
-                    return;
-                } else {
-                    logger.error("❌ SendGrid returned error status: {} - {}", response.getStatusCode(), response.getBody());
-                    logger.error("   Response headers: {}", response.getHeaders());
-                    // Fall through to try other methods
-                }
-            } catch (Exception e) {
-                logger.error("❌ Failed to send email via SendGrid: {}", e.getMessage(), e);
-                logger.error("   Error type: {}", e.getClass().getSimpleName());
-                // Fall through to try other methods
-            }
-        } else {
-            if (!sendgridEnabled) {
-                logger.debug("SendGrid is disabled (sendgridEnabled=false)");
-            }
-            if (sendgridApiKey == null || sendgridApiKey.trim().isEmpty()) {
-                logger.debug("SendGrid API key is not configured (SENDGRID_API_KEY env var)");
-            }
-        }
-        
         // Check Spring Mail configuration
         if (javaMailSender == null) {
             logger.error("❌ CRITICAL: JavaMailSender bean is NULL!");
@@ -218,7 +168,7 @@ public class EmailService {
             logger.error("   Current mailUsername: '{}'", mailUsername.isEmpty() ? "EMPTY" : mailUsername);
         }
         
-        // Priority 2: Use Gmail SMTP if enabled
+        // Priority 1: Use Gmail SMTP if enabled (better deliverability - goes to inbox)
         if (gmailEnabled && javaMailSender != null) {
             try {
                 logger.info("Attempting to send via Gmail SMTP...");
@@ -269,6 +219,56 @@ public class EmailService {
                 logger.error("   - spring.mail.port (should be 587)");
                 logger.error("   - spring.mail.username (from GMAIL_USER env var)");
                 logger.error("   - spring.mail.password (from GMAIL_APP_PASS env var)");
+            }
+        }
+        
+        // Priority 2: Use SendGrid if enabled (fallback if Gmail fails)
+        if (sendgridEnabled && sendgridApiKey != null && !sendgridApiKey.trim().isEmpty()) {
+            try {
+                logger.info("Attempting to send via SendGrid...");
+                logger.info("From Email: {}", sendgridFromEmail);
+                
+                Email from = new Email(sendgridFromEmail, "SmartCart");
+                Email to = new Email(toEmail);
+                
+                // Create Mail object - SendGrid requires text/plain BEFORE text/html
+                Mail mail = new Mail();
+                mail.setFrom(from);
+                mail.setSubject(subject);
+                mail.addContent(new Content("text/plain", bodyText));  // Must be first
+                mail.addContent(new Content("text/html", bodyHtml));   // Must be second
+                
+                Personalization personalization = new Personalization();
+                personalization.addTo(to);
+                mail.addPersonalization(personalization);
+                
+                SendGrid sg = new SendGrid(sendgridApiKey);
+                Request request = new Request();
+                request.setMethod(Method.POST);
+                request.setEndpoint("mail/send");
+                request.setBody(mail.build());
+                
+                Response response = sg.api(request);
+                
+                if (response.getStatusCode() >= 200 && response.getStatusCode() < 300) {
+                    logger.info("✅ Email sent successfully via SendGrid. Status: {}, To: {}", response.getStatusCode(), toEmail);
+                    return;
+                } else {
+                    logger.error("❌ SendGrid returned error status: {} - {}", response.getStatusCode(), response.getBody());
+                    logger.error("   Response headers: {}", response.getHeaders());
+                    // Fall through to try other methods
+                }
+            } catch (Exception e) {
+                logger.error("❌ Failed to send email via SendGrid: {}", e.getMessage(), e);
+                logger.error("   Error type: {}", e.getClass().getSimpleName());
+                // Fall through to try other methods
+            }
+        } else {
+            if (!sendgridEnabled) {
+                logger.debug("SendGrid is disabled (sendgridEnabled=false)");
+            }
+            if (sendgridApiKey == null || sendgridApiKey.trim().isEmpty()) {
+                logger.debug("SendGrid API key is not configured (SENDGRID_API_KEY env var)");
             }
         }
         
