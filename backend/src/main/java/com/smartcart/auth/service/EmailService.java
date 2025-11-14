@@ -169,12 +169,12 @@ public class EmailService {
                 Email from = new Email(sendgridFromEmail, "SmartCart");
                 Email to = new Email(toEmail);
                 
-                // Create Mail object with HTML content (primary)
+                // Create Mail object - SendGrid requires text/plain BEFORE text/html
                 Mail mail = new Mail();
                 mail.setFrom(from);
                 mail.setSubject(subject);
-                mail.addContent(new Content("text/html", bodyHtml));
-                mail.addContent(new Content("text/plain", bodyText));
+                mail.addContent(new Content("text/plain", bodyText));  // Must be first
+                mail.addContent(new Content("text/html", bodyHtml));   // Must be second
                 
                 Personalization personalization = new Personalization();
                 personalization.addTo(to);
