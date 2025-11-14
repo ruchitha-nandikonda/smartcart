@@ -244,7 +244,7 @@ export default function VerifyOTP() {
               </div>
             </div>
           ) : (
-            <form className="mt-8 space-y-6" onSubmit={handleVerify}>
+            <form className="mt-8 space-y-6" onSubmit={handleVerify} autoComplete="off">
               {error && (
                 <div className={`bg-red-500/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-xl relative backdrop-blur-sm ${reduceMotion ? '' : 'animate-shake'}`}>
                   {error}
@@ -260,12 +260,14 @@ export default function VerifyOTP() {
                     <input
                       key={index}
                       id={`otp-${index}`}
+                      name={`otp-${index}`}
                       type="text"
                       inputMode="numeric"
                       maxLength={1}
-                      autoComplete="one-time-code"
+                      autoComplete="off"
                       autoCorrect="off"
                       autoCapitalize="none"
+                      spellCheck={false}
                       pattern="[0-9]*"
                       value={digit}
                       onChange={(e) => handleOtpChange(index, e.target.value)}
