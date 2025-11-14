@@ -230,6 +230,9 @@ export default function VerifyOTP() {
             <p className="text-center text-sm font-semibold text-teal-300 mt-1">
               {email}
             </p>
+            <p className="mt-2 text-center text-xs text-amber-200/90 font-semibold tracking-wide uppercase">
+              Didn’t get the email? Please check your spam or junk folder.
+            </p>
           </div>
 
           {success ? (
