@@ -6,12 +6,12 @@ import { authApi } from '../api/auth'
 import { FaUserPlus, FaSignInAlt } from 'react-icons/fa'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 
-const REMEMBER_ME_EMAIL_KEY = 'smartcart_remembered_email'
+const REMEMBER_ME_USERNAME_KEY = 'smartcart_remembered_username'
 const REMEMBER_ME_ENABLED_KEY = 'smartcart_remember_me'
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true)
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [rememberMe, setRememberMe] = useState(false)
   const [firstName, setFirstName] = useState('')
@@ -47,13 +47,13 @@ export default function Login() {
     }, 600)
   }
 
-  // Load saved email on component mount
+  // Load saved username on component mount
   useEffect(() => {
     const savedRememberMe = localStorage.getItem(REMEMBER_ME_ENABLED_KEY) === 'true'
     if (savedRememberMe) {
-      const savedEmail = localStorage.getItem(REMEMBER_ME_EMAIL_KEY)
-      if (savedEmail) {
-        setEmail(savedEmail)
+      const savedUsername = localStorage.getItem(REMEMBER_ME_USERNAME_KEY)
+      if (savedUsername) {
+        setUsername(savedUsername)
         setRememberMe(true)
       }
     }
@@ -71,15 +71,13 @@ export default function Login() {
 
     try {
       if (isLogin) {
-        const response = await authApi.login({ email, password })
+        const response = await authApi.login({ username, password })
 
-        // Save email if "Remember Me" is checked
         if (rememberMe) {
-          localStorage.setItem(REMEMBER_ME_EMAIL_KEY, email)
+          localStorage.setItem(REMEMBER_ME_USERNAME_KEY, username)
           localStorage.setItem(REMEMBER_ME_ENABLED_KEY, 'true')
         } else {
-          // Clear saved email if "Remember Me" is unchecked
-          localStorage.removeItem(REMEMBER_ME_EMAIL_KEY)
+          localStorage.removeItem(REMEMBER_ME_USERNAME_KEY)
           localStorage.removeItem(REMEMBER_ME_ENABLED_KEY)
         }
 
@@ -87,7 +85,7 @@ export default function Login() {
           accessToken: response.accessToken, 
           refreshToken: response.refreshToken,
           userId: response.userId, 
-          email: response.email 
+          username: response.username 
         }))
         
         navigate('/dashboard-intro')
@@ -101,11 +99,24 @@ export default function Login() {
         }
         localStorage.setItem('customerFirstName', trimmedFirst)
         localStorage.setItem('customerLastName', trimmedLast)
-        // Registration - send OTP
-        await authApi.register({ email, password })
-        
-        // Navigate to OTP verification page with email only
-        navigate('/verify-otp', { state: { email } })
+        const response = await authApi.register({ username, password })
+
+        if (rememberMe) {
+          localStorage.setItem(REMEMBER_ME_USERNAME_KEY, username)
+          localStorage.setItem(REMEMBER_ME_ENABLED_KEY, 'true')
+        } else {
+          localStorage.removeItem(REMEMBER_ME_USERNAME_KEY)
+          localStorage.removeItem(REMEMBER_ME_ENABLED_KEY)
+        }
+
+        dispatch(setAuth({
+          accessToken: response.accessToken,
+          refreshToken: response.refreshToken,
+          userId: response.userId,
+          username: response.username,
+        }))
+
+        navigate('/dashboard-intro')
       }
     } catch (err: any) {
       // Handle error response - try multiple extraction methods
@@ -292,13 +303,17 @@ export default function Login() {
               )}
               <div>
                 <input
-                  type="email"
+                  type="text"
                   required
-                  autoComplete="email"
+                  autoComplete="username"
+                  minLength={3}
+                  maxLength={64}
+                  pattern="[a-zA-Z0-9._+@-]+"
+                  title="Letters, numbers, and . _ + - @ only (no spaces)"
                   className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-400/50 focus:border-teal-300/50 transition-all duration-300 backdrop-blur-sm"
-                  placeholder="Email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
               <div>

@@ -327,7 +327,7 @@ const buildPulseCards = (
 
 export default function DashboardIntro() {
   const navigate = useNavigate()
-  const userEmail = useSelector((state: RootState) => state.auth.email)
+  const loginUsername = useSelector((state: RootState) => state.auth.username)
   const [tipIndex, setTipIndex] = useState(0)
   const [activeAction, setActiveAction] = useState<ActionCard>(quickActions[0])
   const [highlightStats, setHighlightStats] = useState<HighlightMetric[]>([
@@ -350,9 +350,9 @@ export default function DashboardIntro() {
 
   const userName = useMemo(() => {
     if (firstName) return firstName
-    if (!userEmail) return 'SmartCart shopper'
-    return userEmail.split('@')[0]
-  }, [firstName, userEmail])
+    if (!loginUsername) return 'SmartCart shopper'
+    return loginUsername
+  }, [firstName, loginUsername])
 
   useEffect(() => {
     const storedFirst = localStorage.getItem('customerFirstName')

@@ -9,9 +9,6 @@ import software.amazon.awssdk.enhanced.dynamodb.model.ScanEnhancedRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 @Repository
 public class UserRepository {
     
@@ -32,20 +29,17 @@ public class UserRepository {
         return userTable.getItem(key);
     }
     
-    public User findByEmail(String email) {
-        // Note: DynamoDB doesn't support querying by non-key attributes efficiently
-        // In production, you'd want a GSI (Global Secondary Index) on email
-        // For now, we'll scan (not ideal for production, but works for development)
+    public User findByUsername(String username) {
         return userTable.scan(ScanEnhancedRequest.builder().build())
                 .items()
                 .stream()
-                .filter(user -> email.equals(user.getEmail()))
+                .filter(user -> username.equals(user.getUsername()))
                 .findFirst()
                 .orElse(null);
     }
     
-    public boolean existsByEmail(String email) {
-        return findByEmail(email) != null;
+    public boolean existsByUsername(String username) {
+        return findByUsername(username) != null;
     }
     
     public void delete(String userId) {

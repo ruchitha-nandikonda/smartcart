@@ -1,0 +1,5 @@
+# Use: SPRING_PROFILES_ACTIVE=local  (or --spring.profiles.active=local)
+# Requires DynamoDB Local on this URL (see scripts/start-dynamodb.sh or docker compose).
+aws:
+  dynamo:
+    endpoint: http://127.0.0.1:8000

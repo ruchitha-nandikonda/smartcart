@@ -1,20 +1,20 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import type { RootState } from '../store/store'
-import { FaUser, FaEnvelope, FaEdit, FaTimes, FaBoxOpen, FaHeart, FaList, FaReceipt, FaChartLine } from 'react-icons/fa'
+import { FaUser, FaEdit, FaTimes, FaBoxOpen, FaHeart, FaList, FaReceipt, FaChartLine } from 'react-icons/fa'
 import { favoritesApi } from '../api/favorites'
 import { pantryApi } from '../api/pantry'
 import { shoppingListsApi } from '../api/shoppingLists'
 import { receiptsApi } from '../api/receipts'
 
 export default function Profile() {
-  const { email } = useSelector((state: RootState) => state.auth)
+  const { username } = useSelector((state: RootState) => state.auth)
   const [isEditing, setIsEditing] = useState(false)
   const [firstName, setFirstName] = useState(() => localStorage.getItem('customerFirstName') || '')
   const [lastName, setLastName] = useState(() => localStorage.getItem('customerLastName') || '')
   const [draftFirst, setDraftFirst] = useState(firstName)
   const [draftLast, setDraftLast] = useState(lastName)
-  const preferredName = firstName || (email ? email.split('@')[0] : 'User')
+  const preferredName = firstName || username || 'User'
   const [stats, setStats] = useState({
     pantryItems: 0,
     favorites: 0,
@@ -50,13 +50,13 @@ export default function Profile() {
     }
   }
 
-  const getInitials = (email: string | null) => {
+  const getInitials = (login: string | null) => {
     if (firstName && lastName) {
       return `${firstName.charAt(0)}${lastName.charAt(0)}`.toUpperCase()
     }
     if (firstName) return firstName.charAt(0).toUpperCase()
-    if (!email) return 'U'
-    return email.charAt(0).toUpperCase()
+    if (!login) return 'U'
+    return login.charAt(0).toUpperCase()
   }
 
   const handleCancelEdit = () => {
@@ -128,7 +128,7 @@ export default function Profile() {
               {/* Profile Picture */}
               <div className="relative">
                 <div className="w-24 h-24 rounded-full bg-gradient-to-br from-teal-500 via-cyan-500 to-teal-500 flex items-center justify-center text-white text-3xl font-bold shadow-lg">
-                  {getInitials(email)}
+                  {getInitials(username)}
                 </div>
                 <button className="absolute bottom-0 right-0 bg-teal-600 text-white rounded-full p-2 shadow-md hover:bg-teal-700 transition-all duration-300 hover:scale-110" onClick={() => setIsEditing(true)}>
                   <FaEdit className="text-sm" />
@@ -183,7 +183,7 @@ export default function Profile() {
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
                       {firstName || lastName ? `${firstName} ${lastName}`.trim() : preferredName}
                     </h3>
-                    <p className="text-gray-600">{email}</p>
+                    <p className="text-gray-600">@{username}</p>
                   </>
                 )}
               </div>
@@ -210,11 +210,11 @@ export default function Profile() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
               <div className="bg-teal-100 p-3 rounded-lg">
-                <FaEnvelope className="text-teal-600 text-xl" />
+                <FaUser className="text-teal-600 text-xl" />
               </div>
               <div>
-                <p className="text-sm text-gray-600">Email</p>
-                <p className="font-semibold text-gray-900">{email || 'N/A'}</p>
+                <p className="text-sm text-gray-600">Username</p>
+                <p className="font-semibold text-gray-900">{username || 'N/A'}</p>
               </div>
             </div>
           </div>

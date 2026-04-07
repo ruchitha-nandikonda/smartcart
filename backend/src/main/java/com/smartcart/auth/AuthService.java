@@ -1,12 +1,9 @@
 package com.smartcart.auth;
 
 import com.smartcart.auth.dto.AuthResponse;
-import com.smartcart.auth.dto.RegisterResponse;
-import com.smartcart.auth.model.OTP;
 import com.smartcart.auth.model.User;
 import com.smartcart.auth.repository.OTPRepository;
 import com.smartcart.auth.repository.UserRepository;
-import com.smartcart.auth.service.EmailService;
 import com.smartcart.auth.service.JwtService;
 import com.smartcart.favorites.repository.MealFavoriteRepository;
 import com.smartcart.pantry.repository.PantryRepository;
@@ -14,250 +11,102 @@ import com.smartcart.receipts.repository.ReceiptRepository;
 import com.smartcart.shoppinglist.repository.ShoppingListRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.security.SecureRandom;
 import java.util.UUID;
 
 @Service
 public class AuthService {
     
     private static final Logger logger = LoggerFactory.getLogger(AuthService.class);
-    private static final int OTP_LENGTH = 6;
-    private static final long OTP_EXPIRY_MINUTES = 10;
-    private static final int MAX_OTP_ATTEMPTS = 5;
     
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
     private final OTPRepository otpRepository;
     private final JwtService jwtService;
-    private final EmailService emailService;
     private final PantryRepository pantryRepository;
     private final ReceiptRepository receiptRepository;
     private final MealFavoriteRepository mealFavoriteRepository;
     private final ShoppingListRepository shoppingListRepository;
-    private final SecureRandom random = new SecureRandom();
     
-    @Value("${aws.ses.enabled:false}")
-    private boolean sesEnabled;
-    
-    @Value("${gmail.enabled:false}")
-    private boolean gmailEnabled;
-    
-    public AuthService(PasswordEncoder passwordEncoder, UserRepository userRepository, 
-                      OTPRepository otpRepository, JwtService jwtService, EmailService emailService,
+    public AuthService(PasswordEncoder passwordEncoder, UserRepository userRepository,
+                      OTPRepository otpRepository, JwtService jwtService,
                       PantryRepository pantryRepository, ReceiptRepository receiptRepository,
                       MealFavoriteRepository mealFavoriteRepository, ShoppingListRepository shoppingListRepository) {
         this.passwordEncoder = passwordEncoder;
         this.userRepository = userRepository;
         this.otpRepository = otpRepository;
         this.jwtService = jwtService;
-        this.emailService = emailService;
         this.pantryRepository = pantryRepository;
         this.receiptRepository = receiptRepository;
         this.mealFavoriteRepository = mealFavoriteRepository;
         this.shoppingListRepository = shoppingListRepository;
     }
     
-    public RegisterResponse register(String email, String password) {
-        logger.info("Starting registration for email: {}", email);
+    public AuthResponse register(String username, String password) {
+        logger.info("Starting registration for username: {}", username);
         try {
-            if (userRepository.existsByEmail(email)) {
-                logger.warn("Registration failed: User already exists - {}", email);
+            if (userRepository.existsByUsername(username)) {
+                logger.warn("Registration failed: User already exists - {}", username);
                 throw new RuntimeException("User already exists");
             }
             
-            logger.info("Creating user account for: {}", email);
             String userId = UUID.randomUUID().toString();
             String hashedPassword = passwordEncoder.encode(password);
             
-            User user = new User(userId, email, hashedPassword);
+            User user = new User(userId, username, hashedPassword);
             userRepository.save(user);
             logger.info("User account created successfully: {}", userId);
             
-            // Generate and send OTP
-            String otpCode = generateOTP();
-            logger.info("Generated OTP for {}: {}", email, otpCode);
-            long expiresAt = System.currentTimeMillis() + (OTP_EXPIRY_MINUTES * 60 * 1000);
+            String accessToken = jwtService.generateAccessToken(user.getUserId(), user.getUsername());
+            String refreshToken = jwtService.generateRefreshToken(user.getUserId());
             
-            OTP otp = new OTP(email, "REGISTRATION", otpCode, expiresAt);
-            otpRepository.save(otp);
-            logger.info("OTP saved to database for: {}", email);
-            
-            emailService.sendOTPEmail(email, otpCode, "Registration");
-            logger.info("OTP email sent (or logged) for: {}", email);
-            
-            // Only return OTP if neither Gmail nor SES is enabled (development mode)
-            if (!gmailEnabled && !sesEnabled) {
-                logger.info("Neither Gmail nor SES enabled - returning OTP in response: {}", otpCode);
-                return new RegisterResponse("OTP sent. Check your email or backend logs.", otpCode);
-            }
-            
-            logger.info("Email service enabled - OTP sent via email");
-            return new RegisterResponse("OTP sent to your email.", null);
+            return new AuthResponse(accessToken, refreshToken, user.getUserId(), user.getUsername());
         } catch (Exception e) {
-            logger.error("Error in register() for email {}: {}", email, e.getMessage(), e);
+            logger.error("Error in register() for username {}: {}", username, e.getMessage(), e);
             throw e;
         }
     }
     
-    public AuthResponse verifyOTP(String email, String otpCode) {
-        OTP otp = otpRepository.findByEmailAndType(email, "REGISTRATION");
+    public void resetPassword(String username, String newPassword) {
+        logger.info("Password reset request for username: {}", username);
         
-        if (otp == null) {
-            throw new RuntimeException("No verification code found. Please register again.");
-        }
-        
-        if (otp.isExpired()) {
-            otpRepository.delete(email, "REGISTRATION");
-            throw new RuntimeException("Verification code has expired. Please request a new one.");
-        }
-        
-        otp.incrementAttempts();
-        if (otp.getAttempts() > MAX_OTP_ATTEMPTS) {
-            otpRepository.delete(email, "REGISTRATION");
-            throw new RuntimeException("Too many failed attempts. Please request a new verification code.");
-        }
-        otpRepository.save(otp);
-        
-        if (!otp.getOtpCode().equals(otpCode)) {
-            throw new RuntimeException("Invalid verification code. Please try again.");
-        }
-        
-        // OTP verified - delete it and generate tokens
-        otpRepository.delete(email, "REGISTRATION");
-        
-        User user = userRepository.findByEmail(email);
+        User user = userRepository.findByUsername(username);
         if (user == null) {
-            throw new RuntimeException("User not found");
+            throw new RuntimeException("No account found with this username.");
         }
         
-        String accessToken = jwtService.generateAccessToken(user.getUserId(), user.getEmail());
-        String refreshToken = jwtService.generateRefreshToken(user.getUserId());
-        
-        return new AuthResponse(accessToken, refreshToken, user.getUserId(), user.getEmail());
-    }
-    
-    public RegisterResponse resendOTP(String email) {
-        User user = userRepository.findByEmail(email);
-        if (user == null) {
-            throw new RuntimeException("User not found");
-        }
-        
-        // Delete old OTP if exists
-        OTP oldOtp = otpRepository.findByEmailAndType(email, "REGISTRATION");
-        if (oldOtp != null) {
-            otpRepository.delete(email, "REGISTRATION");
-        }
-        
-        // Generate new OTP
-        String otpCode = generateOTP();
-        long expiresAt = System.currentTimeMillis() + (OTP_EXPIRY_MINUTES * 60 * 1000);
-        
-        OTP otp = new OTP(email, "REGISTRATION", otpCode, expiresAt);
-        otpRepository.save(otp);
-        
-        emailService.sendOTPEmail(email, otpCode, "Registration");
-        
-        // Only return OTP if neither Gmail nor SES is enabled (development mode)
-        if (!gmailEnabled && !sesEnabled) {
-            return new RegisterResponse("OTP resent. Check your email or backend logs.", otpCode);
-        }
-        
-        return new RegisterResponse("OTP resent to your email.", null);
-    }
-    
-    public void forgotPassword(String email) {
-        User user = userRepository.findByEmail(email);
-        if (user == null) {
-            // Don't reveal if user exists or not for security
-            // Just log and return success
-            return;
-        }
-        
-        // Generate OTP for password reset
-        String otpCode = generateOTP();
-        long expiresAt = System.currentTimeMillis() + (OTP_EXPIRY_MINUTES * 60 * 1000);
-        
-        // Delete old password reset OTP if exists
-        OTP oldOtp = otpRepository.findByEmailAndType(email, "PASSWORD_RESET");
-        if (oldOtp != null) {
-            otpRepository.delete(email, "PASSWORD_RESET");
-        }
-        
-        OTP otp = new OTP(email, "PASSWORD_RESET", otpCode, expiresAt);
-        otpRepository.save(otp);
-        
-        emailService.sendPasswordResetEmail(email, otpCode);
-    }
-    
-    public void resetPassword(String email, String otpCode, String newPassword) {
-        logger.info("Password reset request for email: {}", email);
-        
-        // Verify OTP
-        OTP otp = otpRepository.findByEmailAndType(email, "PASSWORD_RESET");
-        if (otp == null) {
-            throw new RuntimeException("Invalid or expired reset code. Please request a new one.");
-        }
-        
-        // Check if OTP is expired
-        if (System.currentTimeMillis() > otp.getExpiresAt()) {
-            otpRepository.delete(email, "PASSWORD_RESET");
-            throw new RuntimeException("Reset code has expired. Please request a new one.");
-        }
-        
-        // Verify OTP code
-        if (!otp.getOtpCode().equals(otpCode)) {
-            throw new RuntimeException("Invalid reset code. Please check and try again.");
-        }
-        
-        // Find user
-        User user = userRepository.findByEmail(email);
-        if (user == null) {
-            throw new RuntimeException("User not found.");
-        }
-        
-        // Update password
         String hashedPassword = passwordEncoder.encode(newPassword);
         user.setHashedPassword(hashedPassword);
         userRepository.save(user);
         
-        // Delete used OTP
-        otpRepository.delete(email, "PASSWORD_RESET");
-        
-        logger.info("Password reset successful for email: {}", email);
-    }
-    
-    private String generateOTP() {
-        StringBuilder otp = new StringBuilder(OTP_LENGTH);
-        for (int i = 0; i < OTP_LENGTH; i++) {
-            otp.append(random.nextInt(10));
-        }
-        return otp.toString();
-    }
-    
-    public AuthResponse login(String email, String password) {
         try {
-            User user = userRepository.findByEmail(email);
+            otpRepository.deleteAllByEmail(username);
+        } catch (Exception e) {
+            logger.debug("No OTP rows to clear for {}: {}", username, e.getMessage());
+        }
+        
+        logger.info("Password reset successful for username: {}", username);
+    }
+    
+    public AuthResponse login(String username, String password) {
+        try {
+            User user = userRepository.findByUsername(username);
             if (user == null) {
-                throw new RuntimeException("No account found with this email. Please sign up first.");
+                throw new RuntimeException("No account found with this username. Please sign up first.");
             }
             if (!passwordEncoder.matches(password, user.getHashedPassword())) {
                 throw new RuntimeException("Invalid password. Please try again.");
             }
             
-            // Generate JWT tokens
-            String accessToken = jwtService.generateAccessToken(user.getUserId(), user.getEmail());
+            String accessToken = jwtService.generateAccessToken(user.getUserId(), user.getUsername());
             String refreshToken = jwtService.generateRefreshToken(user.getUserId());
             
-            return new AuthResponse(accessToken, refreshToken, user.getUserId(), user.getEmail());
+            return new AuthResponse(accessToken, refreshToken, user.getUserId(), user.getUsername());
         } catch (RuntimeException e) {
-            // Re-throw RuntimeException as-is (will be handled by GlobalExceptionHandler)
             throw e;
         } catch (Exception e) {
-            // Wrap any other exceptions (like DynamoDB exceptions) in RuntimeException
             throw new RuntimeException("Authentication failed: " + e.getMessage(), e);
         }
     }
@@ -275,11 +124,10 @@ public class AuthService {
                 throw new RuntimeException("User not found");
             }
             
-            // Generate new tokens
-            String newAccessToken = jwtService.generateAccessToken(userId, user.getEmail());
+            String newAccessToken = jwtService.generateAccessToken(userId, user.getUsername());
             String newRefreshToken = jwtService.generateRefreshToken(userId);
             
-            return new AuthResponse(newAccessToken, newRefreshToken, userId, user.getEmail());
+            return new AuthResponse(newAccessToken, newRefreshToken, userId, user.getUsername());
         } catch (Exception e) {
             throw new RuntimeException("Token refresh failed: " + e.getMessage(), e);
         }
@@ -295,10 +143,9 @@ public class AuthService {
                 throw new RuntimeException("User not found");
             }
             
-            String email = user.getEmail();
-            logger.info("Deleting all data for user: {} ({})", email, userId);
+            String username = user.getUsername();
+            logger.info("Deleting all data for user: {} ({})", username, userId);
             
-            // Delete all user data
             try {
                 pantryRepository.deleteAllByUserId(userId);
                 logger.info("Deleted pantry items for user: {}", userId);
@@ -328,15 +175,14 @@ public class AuthService {
             }
             
             try {
-                otpRepository.deleteAllByEmail(email);
-                logger.info("Deleted OTPs for email: {}", email);
+                otpRepository.deleteAllByEmail(username);
+                logger.info("Deleted OTPs for login: {}", username);
             } catch (Exception e) {
                 logger.warn("Error deleting OTPs: {}", e.getMessage());
             }
             
-            // Finally, delete the user account
             userRepository.delete(userId);
-            logger.info("Successfully deleted user account: {} ({})", email, userId);
+            logger.info("Successfully deleted user account: {} ({})", username, userId);
             
         } catch (Exception e) {
             logger.error("Error deleting account for userId {}: {}", userId, e.getMessage(), e);

@@ -20,7 +20,7 @@ const STORAGE_KEYS = {
 export default function Settings() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { email } = useSelector((state: RootState) => state.auth)
+  const { username } = useSelector((state: RootState) => state.auth)
   const [emailNotifications, setEmailNotifications] = useState(true)
   const [expiringItems, setExpiringItems] = useState(true)
   const [newDeals, setNewDeals] = useState(true)
@@ -95,7 +95,7 @@ export default function Settings() {
 
       const exportPayload = {
         exportedAt: new Date().toISOString(),
-        account: email,
+        account: username,
         preferences: {
           emailNotifications,
           expiringItems,
@@ -184,7 +184,7 @@ export default function Settings() {
                 </div>
               </div>
               <button
-                onClick={() => navigate('/reset-password', { state: { email } })}
+                onClick={() => navigate('/reset-password', { state: { username } })}
                 className="button-interactive px-4 py-2 bg-gradient-to-r from-teal-500 via-cyan-500 to-teal-500 text-white rounded-lg shadow-md transition-all duration-300 hover:from-teal-600 hover:via-cyan-600 hover:to-teal-600"
               >
                 Change

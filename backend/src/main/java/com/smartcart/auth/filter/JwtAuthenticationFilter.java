@@ -47,7 +47,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 // Validate token
                 if (userId != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                     if (jwtService.validateToken(token, userId)) {
-                        String email = jwtService.extractEmail(token);
+                        String username = jwtService.extractUsername(token);
                         
                         // Create authentication object
                         UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
@@ -58,9 +58,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                         authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                         SecurityContextHolder.getContext().setAuthentication(authToken);
                         
-                        // Set userId as request attribute for downstream filters/controllers
                         request.setAttribute("userId", userId);
-                        request.setAttribute("email", email);
+                        request.setAttribute("username", username);
                         
                         logger.debug("JWT authentication successful for user: {}", userId);
                     } else {
@@ -85,9 +84,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         if (path.startsWith("/api/auth/")) {
             return path.equals("/api/auth/register") ||
                    path.equals("/api/auth/login") ||
-                   path.equals("/api/auth/verify-otp") ||
-                   path.equals("/api/auth/resend-otp") ||
-                   path.equals("/api/auth/forgot-password") ||
                    path.equals("/api/auth/reset-password") ||
                    path.equals("/api/auth/refresh");
         }

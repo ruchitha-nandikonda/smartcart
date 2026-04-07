@@ -70,7 +70,7 @@ public class ErrorHandlingFilter extends OncePerRequestFilter {
             return "Incorrect password. Please check your password and try again.";
         }
         if (message.contains("No account found")) {
-            return "No account found with this email. Please sign up to create an account.";
+            return "No account found with this username. Please sign up to create an account.";
         }
         if (message.contains("Cannot do operations on a non-existent table")) {
             return "Database table not found. Please ensure DynamoDB is running and tables are initialized.";

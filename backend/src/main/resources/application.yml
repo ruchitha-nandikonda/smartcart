@@ -1,3 +1,8 @@
+# Set EMAIL_OUTBOUND_ENABLED=true when you want SendGrid/Gmail/SES to send real email.
+email:
+  outbound:
+    enabled: ${EMAIL_OUTBOUND_ENABLED:false}
+
 spring:
   application:
     name: smartcart-backend

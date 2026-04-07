@@ -25,6 +25,9 @@ public class EmailService {
     
     private static final Logger logger = LoggerFactory.getLogger(EmailService.class);
     
+    @Value("${email.outbound.enabled:false}")
+    private boolean outboundEmailEnabled;
+    
     @Autowired(required = false)
     private SesClient sesClient;
     
@@ -152,6 +155,11 @@ public class EmailService {
     }
     
     private void sendEmail(String toEmail, String subject, String bodyText, String bodyHtml) {
+        if (!outboundEmailEnabled) {
+            logger.info("Outbound email disabled (email.outbound.enabled=false). Skipping SMTP/SendGrid/SES send. To: {}", toEmail);
+            return;
+        }
+        
         logger.info("=== ATTEMPTING TO SEND EMAIL ===");
         logger.info("To: {}", toEmail);
         logger.info("SendGrid Enabled: {}", sendgridEnabled);
@@ -160,69 +168,7 @@ public class EmailService {
         logger.info("SES Enabled: {}", sesEnabled);
         logger.info("SES Client: {}", sesClient != null ? "Available" : "NULL");
         
-        // Check Spring Mail configuration
-        if (javaMailSender == null) {
-            logger.error("❌ CRITICAL: JavaMailSender bean is NULL!");
-            logger.error("   This means Spring Mail is not configured properly.");
-            logger.error("   Check that spring.mail.username and spring.mail.password are set.");
-            logger.error("   Current mailUsername: '{}'", mailUsername.isEmpty() ? "EMPTY" : mailUsername);
-        }
-        
-        // Priority 1: Use Gmail SMTP if enabled (better deliverability - goes to inbox)
-        if (gmailEnabled && javaMailSender != null) {
-            try {
-                logger.info("Attempting to send via Gmail SMTP...");
-                logger.info("From Email: {}", getFromEmail());
-                logger.info("Gmail User: {}", gmailUser);
-                logger.info("Mail Username: {}", mailUsername.isEmpty() ? "EMPTY - CHECK CONFIG!" : mailUsername);
-                
-                MimeMessage message = javaMailSender.createMimeMessage();
-                MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
-                
-                String fromEmail = getFromEmail();
-                logger.info("Using From Email: {}", fromEmail);
-                
-                helper.setFrom(fromEmail, "SmartCart");
-                helper.setTo(toEmail);
-                helper.setSubject(subject);
-                helper.setText(bodyText, bodyHtml);
-                
-                logger.info("Sending email via JavaMailSender...");
-                javaMailSender.send(message);
-                logger.info("✅ Email sent successfully via Gmail SMTP. To: {}", toEmail);
-                return;
-            } catch (MessagingException e) {
-                logger.error("❌ Failed to send email via Gmail SMTP (MessagingException): {}", e.getMessage(), e);
-                logger.error("   Exception details: {}", e.getClass().getName());
-                if (e.getCause() != null) {
-                    logger.error("   Cause: {}", e.getCause().getMessage());
-                    logger.error("   Cause type: {}", e.getCause().getClass().getName());
-                }
-                // Log full stack trace for debugging
-                logger.error("   Full stack trace:", e);
-                // Fall through to try SES or log
-            } catch (Exception e) {
-                logger.error("❌ Unexpected error sending email via Gmail: {}", e.getMessage(), e);
-                logger.error("   Exception type: {}", e.getClass().getName());
-                logger.error("   Full stack trace:", e);
-                // Fall through to try SES or log
-            }
-        } else {
-            if (!gmailEnabled) {
-                logger.warn("⚠️  Gmail is disabled (gmailEnabled=false)");
-                logger.warn("   Check GMAIL_ENABLED environment variable");
-            }
-            if (javaMailSender == null) {
-                logger.error("⚠️  JavaMailSender bean is NULL - Spring Mail might not be configured");
-                logger.error("   Spring Boot auto-configuration requires:");
-                logger.error("   - spring.mail.host (should be smtp.gmail.com)");
-                logger.error("   - spring.mail.port (should be 587)");
-                logger.error("   - spring.mail.username (from GMAIL_USER env var)");
-                logger.error("   - spring.mail.password (from GMAIL_APP_PASS env var)");
-            }
-        }
-        
-        // Priority 2: Use SendGrid if enabled (fallback if Gmail fails)
+        // Priority 1: Use SendGrid if enabled
         if (sendgridEnabled && sendgridApiKey != null && !sendgridApiKey.trim().isEmpty()) {
             try {
                 logger.info("Attempting to send via SendGrid...");
@@ -269,6 +215,65 @@ public class EmailService {
             }
             if (sendgridApiKey == null || sendgridApiKey.trim().isEmpty()) {
                 logger.debug("SendGrid API key is not configured (SENDGRID_API_KEY env var)");
+            }
+        }
+        
+        // Check Spring Mail configuration before attempting Gmail
+        if (javaMailSender == null) {
+            logger.error("❌ CRITICAL: JavaMailSender bean is NULL!");
+            logger.error("   This means Spring Mail is not configured properly.");
+            logger.error("   Check that spring.mail.username and spring.mail.password are set.");
+            logger.error("   Current mailUsername: '{}'", mailUsername.isEmpty() ? "EMPTY" : mailUsername);
+        }
+        
+        // Priority 2: Use Gmail SMTP if enabled (fallback when SendGrid fails)
+        if (gmailEnabled && javaMailSender != null) {
+            try {
+                logger.info("Attempting to send via Gmail SMTP...");
+                logger.info("From Email: {}", getFromEmail());
+                logger.info("Gmail User: {}", gmailUser);
+                logger.info("Mail Username: {}", mailUsername.isEmpty() ? "EMPTY - CHECK CONFIG!" : mailUsername);
+                
+                MimeMessage message = javaMailSender.createMimeMessage();
+                MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+                
+                String fromEmail = getFromEmail();
+                logger.info("Using From Email: {}", fromEmail);
+                
+                helper.setFrom(fromEmail, "SmartCart");
+                helper.setTo(toEmail);
+                helper.setSubject(subject);
+                helper.setText(bodyText, bodyHtml);
+                
+                logger.info("Sending email via JavaMailSender...");
+                javaMailSender.send(message);
+                logger.info("✅ Email sent successfully via Gmail SMTP. To: {}", toEmail);
+                return;
+            } catch (MessagingException e) {
+                logger.error("❌ Failed to send email via Gmail SMTP (MessagingException): {}", e.getMessage(), e);
+                logger.error("   Exception details: {}", e.getClass().getName());
+                if (e.getCause() != null) {
+                    logger.error("   Cause: {}", e.getCause().getMessage());
+                    logger.error("   Cause type: {}", e.getCause().getClass().getName());
+                }
+                logger.error("   Full stack trace:", e);
+            } catch (Exception e) {
+                logger.error("❌ Unexpected error sending email via Gmail: {}", e.getMessage(), e);
+                logger.error("   Exception type: {}", e.getClass().getName());
+                logger.error("   Full stack trace:", e);
+            }
+        } else {
+            if (!gmailEnabled) {
+                logger.warn("⚠️  Gmail is disabled (gmailEnabled=false)");
+                logger.warn("   Check GMAIL_ENABLED environment variable");
+            }
+            if (javaMailSender == null) {
+                logger.error("⚠️  JavaMailSender bean is NULL - Spring Mail might not be configured");
+                logger.error("   Spring Boot auto-configuration requires:");
+                logger.error("   - spring.mail.host (should be smtp.gmail.com)");
+                logger.error("   - spring.mail.port (should be 465 or 587)");
+                logger.error("   - spring.mail.username (from GMAIL_USER env var)");
+                logger.error("   - spring.mail.password (from GMAIL_APP_PASS env var)");
             }
         }
         

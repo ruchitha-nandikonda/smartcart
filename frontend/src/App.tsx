@@ -9,7 +9,6 @@ const Introduction = lazy(() => import('./pages/Introduction'))
 const Login = lazy(() => import('./pages/Login'))
 const ForgotPassword = lazy(() => import('./pages/ForgotPassword'))
 const ResetPassword = lazy(() => import('./pages/ResetPassword'))
-const VerifyOTP = lazy(() => import('./pages/VerifyOTP'))
 const Onboarding = lazy(() => import('./pages/Onboarding'))
 const DashboardIntro = lazy(() => import('./pages/DashboardIntro'))
 const Pantry = lazy(() => import('./pages/Pantry'))
@@ -45,7 +44,6 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
-      <Route path="/verify-otp" element={<VerifyOTP />} />
       <Route path="/onboarding" element={<Onboarding />} />
       <Route
         path="/dashboard-intro"

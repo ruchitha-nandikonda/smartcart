@@ -19,15 +19,14 @@ public class JwtService {
     @Value("${jwt.secret:your-256-bit-secret-key-change-in-production-minimum-32-characters-long}")
     private String secret;
     
-    @Value("${jwt.access-token-expiration:3600000}") // 1 hour default
+    @Value("${jwt.access-token-expiration:3600000}")
     private long accessTokenExpiration;
     
-    @Value("${jwt.refresh-token-expiration:604800000}") // 7 days default
+    @Value("${jwt.refresh-token-expiration:604800000}")
     private long refreshTokenExpiration;
     
     private SecretKey getSigningKey() {
         byte[] keyBytes = secret.getBytes(StandardCharsets.UTF_8);
-        // Ensure key is at least 256 bits (32 bytes)
         if (keyBytes.length < 32) {
             byte[] paddedKey = new byte[32];
             System.arraycopy(keyBytes, 0, paddedKey, 0, Math.min(keyBytes.length, 32));
@@ -36,9 +35,9 @@ public class JwtService {
         return Keys.hmacShaKeyFor(keyBytes);
     }
     
-    public String generateAccessToken(String userId, String email) {
+    public String generateAccessToken(String userId, String username) {
         Map<String, Object> claims = new HashMap<>();
-        claims.put("email", email);
+        claims.put("username", username);
         return createToken(claims, userId, accessTokenExpiration);
     }
     
@@ -64,8 +63,15 @@ public class JwtService {
         return extractClaim(token, Claims::getSubject);
     }
     
-    public String extractEmail(String token) {
-        return extractClaim(token, claims -> claims.get("email", String.class));
+    /** Prefer claim {@code username}; fall back to legacy {@code email} for old tokens. */
+    public String extractUsername(String token) {
+        return extractClaim(token, claims -> {
+            String u = claims.get("username", String.class);
+            if (u != null && !u.isEmpty()) {
+                return u;
+            }
+            return claims.get("email", String.class);
+        });
     }
     
     public Date extractExpiration(String token) {
@@ -102,12 +108,3 @@ public class JwtService {
         }
     }
 }
-
-
-
-
-
-
-
-
-

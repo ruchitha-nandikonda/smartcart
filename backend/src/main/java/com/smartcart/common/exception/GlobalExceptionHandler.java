@@ -120,15 +120,21 @@ public class GlobalExceptionHandler {
         }
         
         if (technicalMessage.contains("No account found")) {
-            return "No account found with this email. Please sign up to create an account.";
+            return "No account found with this username. Please sign up to create an account.";
         }
         
         if (technicalMessage.contains("User already exists")) {
-            return "An account with this email already exists. Please sign in instead.";
+            return "An account with this username already exists. Please sign in instead.";
         }
         
         if (technicalMessage.contains("Invalid credentials") || technicalMessage.contains("credentials")) {
-            return "Email or password is incorrect. Please check your credentials and try again.";
+            return "Username or password is incorrect. Please check your credentials and try again.";
+        }
+        
+        if (technicalMessage.contains("Connection refused")) {
+            return "Cannot reach the database (DynamoDB Local). Start Docker Desktop, then from the repo root run "
+                + "./scripts/start-dynamodb.sh . When DynamoDB is listening on port 8000, restart the backend with "
+                + "SPRING_PROFILES_ACTIVE=local or DYNAMO_ENDPOINT=http://127.0.0.1:8000.";
         }
         
         // Return original message if no mapping found

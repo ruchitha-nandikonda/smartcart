@@ -1,14 +1,10 @@
 package com.smartcart.auth;
 
 import com.smartcart.auth.dto.AuthResponse;
-import com.smartcart.auth.dto.ForgotPasswordRequest;
 import com.smartcart.auth.dto.LoginRequest;
 import com.smartcart.auth.dto.RefreshTokenRequest;
 import com.smartcart.auth.dto.RegisterRequest;
-import com.smartcart.auth.dto.RegisterResponse;
-import com.smartcart.auth.dto.ResendOTPRequest;
 import com.smartcart.auth.dto.ResetPasswordRequest;
-import com.smartcart.auth.dto.VerifyOTPRequest;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,63 +23,24 @@ public class AuthController {
     }
     
     @PostMapping("/register")
-    public ResponseEntity<RegisterResponse> register(@Valid @RequestBody RegisterRequest request) {
-        logger.info("Register request for email: {}", request.email());
+    public ResponseEntity<AuthResponse> register(@Valid @RequestBody RegisterRequest request) {
+        logger.info("Register request for username: {}", request.username());
         try {
-            RegisterResponse response = authService.register(request.email(), request.password());
-            logger.info("Registration OTP sent to email: {}", request.email());
+            AuthResponse response = authService.register(request.username(), request.password());
+            logger.info("Registration successful for username: {}", request.username());
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             logger.error("Error in register endpoint", e);
-            throw e; // Let GlobalExceptionHandler catch it
-        }
-    }
-    
-    @PostMapping("/verify-otp")
-    public ResponseEntity<AuthResponse> verifyOTP(@Valid @RequestBody VerifyOTPRequest request) {
-        logger.info("OTP verification request for email: {}", request.email());
-        try {
-            AuthResponse response = authService.verifyOTP(request.email(), request.otp());
-            logger.info("OTP verification successful for email: {}", request.email());
-            return ResponseEntity.ok(response);
-        } catch (Exception e) {
-            logger.error("Error in verify-otp endpoint: {}", e.getMessage(), e);
-            throw e;
-        }
-    }
-    
-    @PostMapping("/resend-otp")
-    public ResponseEntity<RegisterResponse> resendOTP(@Valid @RequestBody ResendOTPRequest request) {
-        logger.info("Resend OTP request for email: {}", request.email());
-        try {
-            RegisterResponse response = authService.resendOTP(request.email());
-            logger.info("OTP resent to email: {}", request.email());
-            return ResponseEntity.ok(response);
-        } catch (Exception e) {
-            logger.error("Error in resend-otp endpoint: {}", e.getMessage(), e);
-            throw e;
-        }
-    }
-    
-    @PostMapping("/forgot-password")
-    public ResponseEntity<Void> forgotPassword(@Valid @RequestBody ForgotPasswordRequest request) {
-        logger.info("Forgot password request for email: {}", request.email());
-        try {
-            authService.forgotPassword(request.email());
-            logger.info("Password reset email sent to: {}", request.email());
-            return ResponseEntity.ok().build();
-        } catch (Exception e) {
-            logger.error("Error in forgot-password endpoint: {}", e.getMessage(), e);
             throw e;
         }
     }
     
     @PostMapping("/reset-password")
     public ResponseEntity<Void> resetPassword(@Valid @RequestBody ResetPasswordRequest request) {
-        logger.info("Reset password request for email: {}", request.email());
+        logger.info("Reset password request for username: {}", request.username());
         try {
-            authService.resetPassword(request.email(), request.otp(), request.newPassword());
-            logger.info("Password reset successful for email: {}", request.email());
+            authService.resetPassword(request.username(), request.newPassword());
+            logger.info("Password reset successful for username: {}", request.username());
             return ResponseEntity.ok().build();
         } catch (Exception e) {
             logger.error("Error in reset-password endpoint: {}", e.getMessage(), e);
@@ -93,14 +50,14 @@ public class AuthController {
     
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest request) {
-        logger.info("Login request for email: {}", request.email());
+        logger.info("Login request for username: {}", request.username());
         try {
-            AuthResponse response = authService.login(request.email(), request.password());
-            logger.info("Login successful for email: {}", request.email());
+            AuthResponse response = authService.login(request.username(), request.password());
+            logger.info("Login successful for username: {}", request.username());
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             logger.error("Error in login endpoint: {}", e.getMessage(), e);
-            throw e; // Let GlobalExceptionHandler catch it
+            throw e;
         }
     }
     
@@ -113,7 +70,7 @@ public class AuthController {
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             logger.error("Error in refresh endpoint: {}", e.getMessage(), e);
-            throw e; // Let GlobalExceptionHandler catch it
+            throw e;
         }
     }
     

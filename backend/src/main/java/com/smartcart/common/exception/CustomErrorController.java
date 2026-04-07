@@ -43,7 +43,7 @@ public class CustomErrorController implements ErrorController {
         } else if (errorMessage.contains("Invalid password") || errorMessage.contains("password")) {
             errorMessage = "Incorrect password. Please check your password and try again.";
         } else if (errorMessage.contains("No account found")) {
-            errorMessage = "No account found with this email. Please sign up to create an account.";
+            errorMessage = "No account found with this username. Please sign up to create an account.";
         }
         
         ErrorResponse error = ErrorResponse.of(
