@@ -168,10 +168,13 @@ Open **http://localhost:5173** — the dev server **proxies `/api` → `localhos
 smartcart/
 ├── backend/          # Spring Boot API (Dockerfile for Render)
 ├── frontend/         # Vite + React (Vercel)
-├── scripts/          # e.g. start-dynamodb.sh
+├── scripts/          # Shell helpers (run from repo root, e.g. ./scripts/start-dynamodb.sh)
+├── docs/
+│   ├── guides/       # Deep-dive guides (deploy, email, tunnels, migrations)
+│   └── FEATURE_MAP.md  # Where to add API + UI code (good for interviews)
+├── tools/            # Small Python helpers (deals / data)
 ├── docker-compose.yml
-├── render.yaml       # Render service hint (backend)
-└── *.md              # Deep-dive guides (sharing, ngrok, etc.)
+└── render.yaml       # Render service hint (backend)
 ```
 
 ---
@@ -274,7 +277,8 @@ The backend allows broad origin patterns for development and common hosting; if 
 
 ## More documentation
 
-The repo includes many focused guides (sharing, tunnels, migrations, etc.). Scan the root `*.md` files or any `docs/` material for one-off setups.
+- **Adding a feature (where code goes):** [`docs/FEATURE_MAP.md`](docs/FEATURE_MAP.md)  
+- **Guide index:** [`docs/README.md`](docs/README.md) — includes links to [`docs/guides/`](docs/guides/) (deploy, email, tunnels, migrations, troubleshooting).
 
 **Suggested next improvements for the product** (track as issues):
 

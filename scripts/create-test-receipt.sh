@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Resolve repository root (this script lives in scripts/)
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")/.." && pwd)"
+cd "$REPO_ROOT" || exit 1
+
+echo "📄 Creating Test Receipt..."
+echo ""
+echo "Option 1: Open the HTML receipt"
+echo "  1. Open: smartcart/test-receipt.html in your browser"
+echo "  2. Press Cmd+P (Mac) or Ctrl+P (Windows) to print"
+echo "  3. Save as PDF or take a screenshot"
+echo "  4. Upload to SmartCart Receipts page"
+echo ""
+echo "Option 2: Use a real receipt"
+echo "  Take a photo of any grocery store receipt"
+echo "  Upload it to test the scanning feature"
+echo ""
+echo "Test Receipt Items:"
+echo "  • Milk - 1 Gallon"
+echo "  • Whole Wheat Bread"
+echo "  • Large Eggs - 12 count"
+echo "  • Chicken Breast - 2 lbs"
+echo "  • Tomatoes - 2 lbs"
+echo "  • Onions - 3 lbs"
+echo "  • Bananas - 2 lbs"
+echo "  • Total: $31.28"
+echo ""
+echo "📸 To test:"
+echo "  1. Open http://localhost:5173/receipts"
+echo "  2. Drag & drop or click to upload receipt image"
+echo "  3. Wait for Textract processing"
+echo "  4. Check pantry for auto-updated items!"
+echo ""
+
